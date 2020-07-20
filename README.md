@@ -3,7 +3,7 @@
 COSHOP-WAS 미디어 연동 서비스 REST-API 서버
 ### API Specification
 REST-API-MCS-v.1.2.pdf
-( https://github.com/teamgrit-lab/mcs/tree/master/rest-api-spec/REST-API-MCS-v.1.2.pdf )
+( https://github.com/brianmoonkr/mcs/blob/master/rest-api-spec/REST-API-MCS-v.1.2.pdf )
 
 ### config.[local/dev/real].json 설정 파일 구조
 <pre>
