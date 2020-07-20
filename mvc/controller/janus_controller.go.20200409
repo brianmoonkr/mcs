@@ -1,0 +1,1383 @@
+package controller
+
+import (
+	"crypto/sha256"
+	"encoding/json"
+	"errors"
+	"fmt"
+	"log"
+	"os"
+	"strconv"
+	"strings"
+	"time"
+	"net/url"
+
+	"github.com/garyburd/redigo/redis"
+	"github.com/go-resty/resty/v2"
+	"github.com/jinzhu/gorm"
+	"github.com/kataras/iris"
+	"github.com/kataras/iris/mvc"
+	"github.com/teamgrit-lab/cojam/component/ctxkey"
+	"github.com/teamgrit-lab/cojam/component/util"
+	"github.com/teamgrit-lab/cojam/config"
+	. "github.com/teamgrit-lab/cojam/mvc/domain"
+	"github.com/teamgrit-lab/cojam/mvc/service"
+	"github.com/teamgrit-lab/cojam/mvc/vo"
+	. "github.com/teamgrit-lab/cojam/transcode"
+)
+
+// JanusController ...
+type JanusController struct {
+	CTX                 iris.Context
+	JanusHttpConn       string
+	WebsocketConn       string
+	CurrentSessionId    uint64
+	CurrentTransaction  string
+	CurrentPluginHandle PluginHandle
+	JanusService        service.JanusService
+}
+
+// BeforeActivation ...
+func (c *JanusController) BeforeActivation(b mvc.BeforeActivation) {
+
+	// 방송
+	b.Handle("POST", "/v2/create", "CreateRoom")
+	b.Handle("POST", "/v2/recreate", "RecreateRoom")
+	b.Handle("POST", "/v2/remove/{room}", "RemoveRoom")
+	b.Handle("POST", "/v2/list", "GetRoomList")
+	b.Handle("POST", "/v2/exist", "CheckRoom")
+	b.Handle("POST", "/v2/participants", "GetParticipantList")
+	b.Handle("POST", "/v2/kick/{room}/{participant}", "KickParticipant")
+	b.Handle("GET", "/v2/session/{session}", "CheckSession")
+	b.Handle("POST", "/v2/message", "GetMessage")
+	b.Handle("POST", "/v2/status", "GetRoomStatus")
+}
+
+func (c *JanusController) CheckRoom() {
+	res := new(vo.ResponseVO)
+
+	param := struct {
+		EndPoint string `json:"end_point"`
+		RoomId   string `json:"room_id"`
+	}{}
+
+	if err := c.CTX.ReadJSON(&param); err != nil {
+		res.Error400(c.CTX, errors.New("Fail Verify Parameter ReadJSON"), "Access Denied")
+		return
+	}
+
+	/*isValid := c.CheckValidAccess()
+
+	if isValid == false {
+		res.Error400(c.CTX, errors.New("request is not allowed."), "Access Denied")
+		return
+	}
+	*/
+
+	exists, err := c.doesRoomExist(param.EndPoint, param.RoomId)
+	if err != nil {
+		res.Error400(c.CTX, err, "Error Occured")
+		return
+	}
+
+	res.Data = map[string]interface{}{
+		"access_point": param.EndPoint,
+		"room_id":      param.RoomId,
+		"exists":       exists,
+	}
+
+	res.Send(c.CTX, "success")
+
+}
+
+func (c *JanusController) GetRoomStatus() {
+	res := new(vo.ResponseVO)
+
+	param := struct {
+		EndPoint string `json:"end_point"`
+		RoomId   string `json:"room_id"`
+		LiveId   string `json:"live_id"`
+	}{}
+
+	if err := c.CTX.ReadJSON(&param); err != nil {
+		res.Error400(c.CTX, errors.New("Fail Verify Parameter ReadJSON"), "Access Denied")
+		return
+	}
+
+	/*isValid := c.CheckValidAccess()
+
+	if isValid == false {
+		res.Error400(c.CTX, errors.New("request is not allowed."), "Access Denied")
+		return
+	}*/
+
+	janusVO := &vo.JanusVO{
+		RDBConn: c.CTX.Values().Get(ctxkey.RDB_CONN).(*gorm.DB),
+		B2bLive: &B2bLive{
+			LiveSeq: param.LiveId,
+		},
+	}
+
+	live, err := c.JanusService.GetLiveInfo(janusVO)
+	if err != nil {
+		res.Error400(c.CTX, err, "C : JanusController::GetRoomStatus() - error in getting b2b_live")
+		return
+	}
+
+	if live == nil {
+		res.Error400(c.CTX, err, "C : JanusController::GetRoomStatus() - No Data in getting b2b_live")
+		return
+	}
+
+	statusMap := map[string]string{
+		"0000": "Ended abnormally",
+		"1000": "created",
+		"9000": "Ended normally",
+	}
+
+	res.Data = map[string]interface{}{
+		"access_point": param.EndPoint,
+		"room_id":      param.RoomId,
+		"status":       live.Status,
+		"desc":         statusMap[live.Status],
+	}
+
+	res.Send(c.CTX, "success")
+}
+
+func (c *JanusController) GetMessage() {
+	res := new(vo.ResponseVO)
+
+	param := struct {
+		EndPoint string `json:"end_point"`
+		RoomId   string `json:"room_id"`
+	}{}
+
+	if err := c.CTX.ReadJSON(&param); err != nil {
+		res.Error400(c.CTX, errors.New("Fail Verify Parameter ReadJSON"), "Access Denied")
+		return
+	}
+
+	/*isValid := c.CheckValidAccess()
+
+	if isValid == false {
+		res.Error400(c.CTX, errors.New("request is not allowed."), "Access Denied")
+		return
+	}*/
+
+	client := resty.New()
+
+	hostName, err := c.getHostName(param.EndPoint)
+	if err != nil {
+		res.Error400(c.CTX, err, "C : JanusController::GetMessage() - endpoint parsing error")
+		return
+	}
+
+	targetUrl := config.CF.Prop.TextroomPost
+	//targetUrl = fmt.Sprintf("%s/%s/_search?sort=date:desc&_source_includes=room,text,from,date&q=room:%s", targetUrl, hostName, param.RoomId)
+
+	resp, err := client.R().
+		SetHeader("Content-Type", "application/json").
+		Get(fmt.Sprintf("%s/%s/_search?sort=date:desc&_source_includes=room,text,from,date&q=room:%s", targetUrl, hostName, param.RoomId))
+
+	if err != nil {
+		res.Error400(c.CTX, err, "C : JanusController::RemoveRoom() - destroy video room")
+		return
+	}
+
+	fmt.Println("=== destroy videoroom room ===")
+	fmt.Println(resp)
+	
+	var esResult EsBody
+	
+	json.Unmarshal(resp.Body(), &esResult)
+	
+	var respBody []EsSource
+
+	for _, hitItem := range esResult.Hits.Hits {
+		source := hitItem.Source
+		respBody = append(respBody, source)	
+	}
+
+	res.Data = map[string]interface{}{
+		"total" : esResult.Hits.Total.Value,
+		"list": respBody,
+	}
+
+	res.Send(c.CTX, "success")
+}
+
+// function :: check if janus session exists or not
+func (c *JanusController) CheckSession() {
+	res := new(vo.ResponseVO)
+
+	sessionId, err := strconv.ParseUint(c.CTX.Params().Get("session"), 10, 64)
+	if err != nil {
+		res.Error400(c.CTX, err, "C : JanusController::CheckSession() - session_id missing")
+		return
+	}
+
+	client := resty.New()
+
+	tr := strconv.FormatInt(time.Now().Unix(), 10)
+
+	var reqMessage JanusCreate
+
+	reqMessage.Janus = "keepalive"
+	reqMessage.Transaction = tr
+	reqMessage.SessionId = sessionId
+	jsonKeepalive, err := json.Marshal(reqMessage)
+	if err != nil {
+		res.Error400(c.CTX, err, "C : JanusController::CheckSession() - request message error")
+		return
+	}
+
+	resp, err := client.R().
+		SetHeader("Content-Type", "application/json").
+		SetBody(string(jsonKeepalive)).
+		Post(fmt.Sprintf("%s/janus", c.JanusHttpConn))
+
+	if err != nil {
+		res.Error400(c.CTX, err, "C : JanusController::CheckSession() - check session")
+		return
+	}
+
+	fmt.Println(resp)
+
+	var sessionResp JanusCreate
+	var keepalive bool
+
+	json.Unmarshal(resp.Body(), &sessionResp)
+
+	if sessionResp.Janus == "ack" {
+		keepalive = true
+	} else {
+		keepalive = false
+	}
+
+	res.Data = map[string]interface{}{
+		"coshop_session_id": sessionId,
+		"keepalive":         keepalive,
+	}
+
+	res.Send(c.CTX, "success")
+}
+
+// function :: remove video room
+func (c *JanusController) RemoveRoom() {
+
+	res := new(vo.ResponseVO)
+
+	/*isValid := c.CheckValidAccess()
+
+	if isValid == false {
+		res.Error400(c.CTX, errors.New("request is not allowed."), "Access Denied")
+		return
+	}
+	*/
+
+	//roomId, err := strconv.ParseUint(c.CTX.Params().Get("room"), 10, 64)
+	liveSeq := c.CTX.Params().Get("room")
+
+	if liveSeq == "" {
+		res.Error400(c.CTX, errors.New("request parameter is missing"), "C : JanusController::RemoveRoom() - parameter is missing")
+		return
+	}
+
+	janusVO := &vo.JanusVO{
+		RDBConn: c.CTX.Values().Get(ctxkey.RDB_CONN).(*gorm.DB),
+		B2bLive: &B2bLive{
+			LiveSeq: liveSeq,
+		},
+	}
+
+	live, err := c.JanusService.GetLiveInfo(janusVO)
+	if err != nil {
+		res.Error400(c.CTX, err, "C : JanusController::RemoveRoom() - error in getting b2b_live")
+		return
+	}
+
+	if live == nil {
+		res.Error400(c.CTX, err, "C : JanusController::RemoveRoom() - No Data in getting b2b_live")
+		return
+	}
+
+	videoroom, err := strconv.ParseUint(live.Videoroom, 10, 64)
+	if err != nil {
+		res.Error400(c.CTX, err, "C : JanusController::RemoveRoom() - videoroom type conversion error : string to uint ")
+		return
+	}
+
+	textroom, err := strconv.ParseUint(live.Textroom, 10, 64)
+	if err != nil {
+		res.Error400(c.CTX, err, "C : JanusController::RemoveRoom() - videoroom type conversion error : string to uint ")
+		return
+	}
+
+	// delete redis session
+	sessionKey := c.getRedisSessionKey(live.Videoroom)
+	c.removeRedisRoomInfo(sessionKey)
+
+	c.SetMediaServer(live.AccessPoint)
+
+	_, err = c.CreateJanusSession()
+
+	if err != nil {
+		res.Error400(c.CTX, err, "C : JanusController::RemoveRoom() - create session")
+		return
+	}
+
+	_, err = c.AttachJanusPlugin()
+	if err != nil {
+		res.Error400(c.CTX, err, "C : JanusController::RemoveRoom() - attach plugin")
+		return
+	}
+
+	client := resty.New()
+
+	// Destroy Janus Videoroom
+	var reqMessage ReqMessage
+	var reqBody ReqBody
+	reqBody.Request = "destroy"
+	reqBody.Room = videoroom
+	reqBody.Secret = "teamgrit"
+
+	reqMessage.Janus = "message"
+	reqMessage.Transaction = c.CurrentTransaction
+	reqMessage.Body = reqBody
+
+	jsonMessage, err := json.Marshal(reqMessage)
+	if err != nil {
+		res.Error400(c.CTX, err, "C : JanusController::RemoveRoom() - request message error")
+		return
+	}
+
+	resp, err := client.R().
+		SetPathParams(map[string]string{
+			"sessionId":    strconv.FormatUint(c.CurrentSessionId, 10),
+			"pluginHandle": strconv.FormatUint(c.CurrentPluginHandle.VideoroomHandleId, 10),
+		}).
+		SetHeader("Content-Type", "application/json").
+		SetBody(string(jsonMessage)).
+		Post(fmt.Sprintf("%s/janus/{sessionId}/{pluginHandle}", c.JanusHttpConn))
+
+	if err != nil {
+		res.Error400(c.CTX, err, "C : JanusController::RemoveRoom() - destroy video room")
+		return
+	}
+
+	fmt.Println("=== destroy videoroom room ===")
+	fmt.Println(resp)
+
+	// destroy text room
+	reqBody.Textroom = "destroy"
+	reqBody.Room = textroom
+	reqMessage.Body = reqBody
+
+	jsonMessage, err = json.Marshal(reqMessage)
+	if err != nil {
+		res.Error400(c.CTX, err, "C : JanusController::RemoveRoom() - request message error")
+		return
+	}
+
+	resp, err = client.R().
+		SetPathParams(map[string]string{
+			"sessionId":    strconv.FormatUint(c.CurrentSessionId, 10),
+			"pluginHandle": strconv.FormatUint(c.CurrentPluginHandle.ChatHandleId, 10),
+		}).
+		SetHeader("Content-Type", "application/json").
+		SetBody(string(jsonMessage)).
+		Post(fmt.Sprintf("%s/janus/{sessionId}/{pluginHandle}", c.JanusHttpConn))
+
+	if err != nil {
+		res.Error400(c.CTX, err, "C : JanusController::RemoveRoom() - destroy text room")
+		return
+	}
+
+	fmt.Println("=== destroy text room ===")
+	fmt.Println(resp)
+
+	err = c.JanusService.DeleteLiveInfo(janusVO)
+	if err != nil {
+		res.Error400(c.CTX, err, "C : JanusController::RemoveRoom() - error in delete b2b_live info")
+		return
+	}
+
+	go TranscodeBySession(live.Videoroom, live.Callback)
+
+	res.Send(c.CTX, "success")
+
+}
+
+// function :: get video room participants
+func (c *JanusController) GetParticipantList() {
+	res := new(vo.ResponseVO)
+
+	param := struct {
+		EndPoint string `json:"end_point"`
+		RoomId   string `json:"room_id"`
+	}{}
+
+	if err := c.CTX.ReadJSON(&param); err != nil {
+		res.Error400(c.CTX, errors.New("Fail Verify Parameter ReadJSON"), "Access Denied")
+		return
+	}
+
+	/*isValid := c.CheckValidAccess()
+
+	if isValid == false {
+		res.Error400(c.CTX, errors.New("request is not allowed."), "Access Denied")
+		return
+	}
+	*/
+
+	c.SetMediaServer(param.EndPoint)
+
+	_, err := c.CreateJanusSession()
+
+	if err != nil {
+		res.Error400(c.CTX, err, "C : JanusController::GetParticipantList() - session error")
+		return
+	}
+
+	_, err = c.AttachJanusPlugin()
+	if err != nil {
+		res.Error400(c.CTX, err, "C : JanusController::GetParticipantList() - plugin handle error")
+		return
+	}
+
+	// check if room_id exists or not
+	client := resty.New()
+	var reqMessage ReqMessage
+	var reqBody ReqBody
+	roomId, _ := strconv.ParseUint(param.RoomId, 10, 64)
+
+	reqBody.Request = "listparticipants"
+	reqBody.Room = roomId
+	reqBody.Secret = "teamgrit"
+
+	reqMessage.Janus = "message"
+	reqMessage.Transaction = c.CurrentTransaction
+	reqMessage.Body = reqBody
+
+	jsonMessage, err := json.Marshal(reqMessage)
+	if err != nil {
+		res.Error400(c.CTX, err, "C : JanusController::GetParticipantList() - Request Message Parsing Error")
+		return
+	}
+
+	resp, err := client.R().
+		SetPathParams(map[string]string{
+			"sessionId":    strconv.FormatUint(c.CurrentSessionId, 10),
+			"pluginHandle": strconv.FormatUint(c.CurrentPluginHandle.VideoroomHandleId, 10),
+		}).
+		SetHeader("Content-Type", "application/json").
+		SetBody(string(jsonMessage)).
+		Post(fmt.Sprintf("%s/janus/{sessionId}/{pluginHandle}", c.JanusHttpConn))
+
+	if err != nil {
+		res.Error400(c.CTX, err, "C : JanusController::GetParticipantList() - Media Server Response Error")
+		return
+	}
+
+	fmt.Println("=== room participant list ===")
+	fmt.Println(resp)
+
+	var videoroomParticipantResp JanusPluginCreate
+
+	json.Unmarshal(resp.Body(), &videoroomParticipantResp)
+
+	res.Data = map[string]interface{}{
+		"access_point":        param.EndPoint,
+		"room_id":             param.RoomId,
+		"participants":       videoroomParticipantResp.PluginData.Data.Participants,
+		"participants_count": len(videoroomParticipantResp.PluginData.Data.Participants),
+	}
+
+	res.Send(c.CTX, "success")
+}
+
+// function :: kick video room participant
+func (c *JanusController) KickParticipant() {
+
+	c.SetOptimalMediaServer()
+
+	res := new(vo.ResponseVO)
+
+	roomId, err := strconv.ParseUint(c.CTX.Params().Get("room"), 10, 64)
+	if err != nil {
+		res.Error400(c.CTX, err, "C : JanusController::KickParticipant() - room_id missing")
+		return
+	}
+
+	participantId, err := strconv.ParseUint(c.CTX.Params().Get("participant"), 10, 64)
+	if err != nil {
+		res.Error400(c.CTX, err, "C : JanusController::KickParticipant() - participant_id missing")
+		return
+	}
+
+	if c.CurrentSessionId == 0 {
+		_, err := c.CreateJanusSession()
+
+		if err != nil {
+			res.Error400(c.CTX, err, "C : JanusController::KickParticipant() - create session")
+			return
+		}
+	}
+
+	if c.CurrentPluginHandle.VideoroomHandleId == 0 {
+		_, err := c.AttachJanusPlugin()
+		if err != nil {
+			res.Error400(c.CTX, err, "C : JanusController::KickParticipant() - attach plugin")
+			return
+		}
+	}
+
+	client := resty.New()
+
+	// Janus Videoroom create
+	var reqMessage ReqMessage
+	var reqBody ReqBody
+	reqBody.Request = "kick"
+	reqBody.Room = roomId
+	reqBody.Id = participantId
+	reqBody.Secret = "teamgrit"
+
+	reqMessage.Janus = "message"
+	reqMessage.Transaction = c.CurrentTransaction
+	reqMessage.Body = reqBody
+
+	jsonMessage, err := json.Marshal(reqMessage)
+	if err != nil {
+		res.Error400(c.CTX, err, "C : JanusController::KickParticipant() - request message error")
+		return
+	}
+
+	resp, err := client.R().
+		SetPathParams(map[string]string{
+			"sessionId":    strconv.FormatUint(c.CurrentSessionId, 10),
+			"pluginHandle": strconv.FormatUint(c.CurrentPluginHandle.VideoroomHandleId, 10),
+		}).
+		SetHeader("Content-Type", "application/json").
+		SetBody(string(jsonMessage)).
+		Post(fmt.Sprintf("%s/janus/{sessionId}/{pluginHandle}", c.JanusHttpConn))
+
+	if err != nil {
+		res.Error400(c.CTX, err, "C : JanusController::KickParticipant() - kick video room participant")
+		return
+	}
+
+	fmt.Println("=== get result for kicking participant ===")
+	fmt.Println(resp)
+
+	var videoroomKickResp JanusPluginCreate
+
+	json.Unmarshal(resp.Body(), &videoroomKickResp)
+
+	var isKicked bool
+	if videoroomKickResp.PluginData.Data.Videoroom == "success" {
+		isKicked = true
+	} else {
+		isKicked = false
+	}
+
+	res.Data = map[string]interface{}{
+		"coshop_session_id":                c.CurrentSessionId,
+		"coshop_plugin_id":                 c.CurrentPluginHandle.VideoroomHandleId,
+		"coshop_plugin_participant_kicked": isKicked,
+	}
+
+	res.Send(c.CTX, "success")
+}
+
+// function :: create video room
+func (c *JanusController) RecreateRoom() {
+
+	res := new(vo.ResponseVO)
+
+	param := struct {
+		EndPoint string `json:"end_point"`
+		RoomId   string `json:"room_id"`
+		LiveId   string `json:"live_id"`
+	}{}
+
+	if err := c.CTX.ReadJSON(&param); err != nil {
+		res.Error400(c.CTX, errors.New("Fail Verify Parameter ReadJSON"), "Access Denied")
+		return
+	}
+
+	/*isValid := c.CheckValidAccess()
+
+	if isValid == false {
+		res.Error400(c.CTX, errors.New("request is not allowed."), "Access Denied")
+		return
+	}
+	*/
+
+	exists, err := c.doesRoomExist(param.EndPoint, param.RoomId)
+	if err != nil {
+		res.Error400(c.CTX, err, "Error Occured")
+		return
+	}
+
+	if exists {
+		res.Error400(c.CTX, err, "C : JanusController::RecreateRoom() - Videoroom id Already exists")
+		return
+	}
+
+	// mariadb update
+	janusVO := &vo.JanusVO{
+		RDBConn: c.CTX.Values().Get(ctxkey.RDB_CONN).(*gorm.DB),
+		B2bLive: &B2bLive{
+			LiveSeq: param.LiveId,
+		},
+	}
+
+	liveInfo, err := c.JanusService.GetLiveInfo(janusVO)
+	if err != nil {
+		res.Error400(c.CTX, err, "C : JanusController::RecreateRoom() - error in select b2b_live info")
+		return
+	}
+
+	if liveInfo == nil {
+		fmt.Println("################################# liveInfo is nil ###################################")
+		res.Error400(c.CTX, err, "C : JanusController::RecreateRoom() - b2b_live info is nil")
+		return
+	}
+
+	client := resty.New()
+	var reqMessage ReqMessage
+	var reqBody ReqBody
+
+	// create room(videoroom/textroom)
+	reqBody.Request = "create"
+	reqBody.Publishers = 1
+
+	if liveInfo.Record {
+		reqBody.Record = true
+		reqBody.RecDir = "/tmp/records/" + param.RoomId
+
+		if err := os.MkdirAll(reqBody.RecDir, 0777); nil != err {
+			res.Error400(c.CTX, err, "C : JanusController::RecreateRoom() - error in creating record directory")
+			return
+		}
+	} else {
+		reqBody.Record = false
+	}
+
+	hostName, err := c.getHostName(param.EndPoint)
+	if err != nil {
+		res.Error400(c.CTX, err, "C : JanusController::RecreateRoom() - error in getting hostname in endpoint url")
+		return
+	}
+
+	roomId, _ := strconv.ParseUint(param.RoomId, 10, 64)
+
+	reqBody.Videocodec = "h264"
+	reqBody.Audiocodec = "opus"
+	reqBody.Room = roomId
+	reqBody.VideoorientExt = false
+	reqBody.AdminKey = "teamgrit"
+	reqBody.Secret = "teamgrit"
+	reqBody.Post = config.CF.Prop.TextroomPost + "/" + hostName
+
+	reqMessage.Janus = "message"
+	reqMessage.Transaction = c.CurrentTransaction
+	reqMessage.Body = reqBody
+
+	jsonMessage, err := json.Marshal(reqMessage)
+	if err != nil {
+		res.Error400(c.CTX, err, "C : JanusController::RecreateRoom() - request message error")
+		return
+	}
+
+	resp, err := client.R().
+		SetPathParams(map[string]string{
+			"sessionId":    strconv.FormatUint(c.CurrentSessionId, 10),
+			"pluginHandle": strconv.FormatUint(c.CurrentPluginHandle.VideoroomHandleId, 10),
+		}).
+		SetHeader("Content-Type", "application/json").
+		SetBody(string(jsonMessage)).
+		Post(fmt.Sprintf("%s/janus/{sessionId}/{pluginHandle}", c.JanusHttpConn))
+
+	if err != nil {
+		res.Error400(c.CTX, err, "C : JanusController::RecreateRoom() - recreate videoroom")
+		return
+	}
+
+	fmt.Println("=== recreate video room ===")
+	fmt.Println(resp)
+
+	var videoroomCreateResp JanusPluginCreate
+
+	json.Unmarshal(resp.Body(), &videoroomCreateResp)
+
+	//create text room
+	reqBody.Textroom = "create"
+	reqBody.Room = roomId
+	reqMessage.Body = reqBody
+
+	jsonMessage, err = json.Marshal(reqMessage)
+	if err != nil {
+		res.Error400(c.CTX, err, "C : JanusController::CreateRoom() - request message error")
+		return
+	}
+
+	resp, err = client.R().
+		SetPathParams(map[string]string{
+			"sessionId":    strconv.FormatUint(c.CurrentSessionId, 10),
+			"pluginHandle": strconv.FormatUint(c.CurrentPluginHandle.ChatHandleId, 10),
+		}).
+		SetHeader("Content-Type", "application/json").
+		SetBody(string(jsonMessage)).
+		Post(fmt.Sprintf("%s/janus/{sessionId}/{pluginHandle}", c.JanusHttpConn))
+
+	if err != nil {
+		res.Error400(c.CTX, err, "C : JanusController::RecreateRoom() - recreate textroom")
+		return
+	}
+
+	fmt.Println("=== recreate text room ===")
+	fmt.Println(resp)
+
+	var textroomCreateResp JanusPluginCreate
+
+	json.Unmarshal(resp.Body(), &textroomCreateResp)
+
+	// check and append redis session map
+	janusParticipants := c.getParticipantList(videoroomCreateResp.PluginData.Data.Room)
+
+	sessionKey := fmt.Sprintf("%s_%s", param.EndPoint, strconv.FormatUint(videoroomCreateResp.PluginData.Data.Room, 10))
+
+	sessionValue := map[string]interface{}{
+		"participants": janusParticipants,
+		"count":        len(janusParticipants),
+		"record":       liveInfo.Record,
+		"callback":     liveInfo.Callback,
+	}
+
+	// append room info into redis
+	c.appendRedisRoomInfo(sessionKey, sessionValue)
+
+	// mariadb status update
+	janusVO = &vo.JanusVO{
+		RDBConn: c.CTX.Values().Get(ctxkey.RDB_CONN).(*gorm.DB),
+		B2bLive: &B2bLive{
+			LiveSeq: param.LiveId,
+		},
+	}
+
+	err = c.JanusService.SetLiveInfo(janusVO)
+	if err != nil {
+		res.Error400(c.CTX, err, "C : JanusController::RemoveRoom() - error in inserting into b2b_live")
+		return
+	}
+
+	res.Data = map[string]interface{}{
+		"access_point":        param.EndPoint,
+		"live_id":             param.LiveId,
+		"session_id":          c.CurrentSessionId,
+		"videoroom_plugin_id": c.CurrentPluginHandle.VideoroomHandleId,
+		"textroom_plugin_id":  c.CurrentPluginHandle.ChatHandleId,
+		"videoroom_id":        videoroomCreateResp.PluginData.Data.Room,
+		"textroom_id":         textroomCreateResp.PluginData.Data.Room,
+		"record":              liveInfo.Record,
+	}
+
+	res.Send(c.CTX, "success")
+}
+
+// function :: create video room
+func (c *JanusController) CreateRoom() {
+
+	c.SetOptimalMediaServer()
+
+	res := new(vo.ResponseVO)
+
+	param := struct {
+		Record      bool   `json:"record"`
+		RoomName    string `json:"room_name"`
+		Description string `json:"description"`
+		Callback    string `json:"callback"`
+	}{}
+
+	if err := c.CTX.ReadJSON(&param); err != nil {
+		res.Error400(c.CTX, errors.New("Fail Verify Parameter ReadJSON"), "Access Denied")
+		return
+	}
+
+	fmt.Println("############## " + strconv.FormatInt(time.Now().Unix(), 10))
+	/*isValid := c.CheckValidAccess()
+
+	if isValid == false {
+		res.Error400(c.CTX, errors.New("request is not allowed."), "Access Denied")
+		return
+	}
+	*/
+
+	_, err := c.CreateJanusSession()
+
+	if err != nil {
+		res.Error400(c.CTX, err, "C : JanusController::CreateRoom() - create session")
+		return
+	}
+
+	_, err = c.AttachJanusPlugin()
+	if err != nil {
+		res.Error400(c.CTX, err, "C : JanusController::CreateRoom() - attach plugin")
+		return
+	}
+
+	// Janus Videoroom create
+	client := resty.New()
+	var reqMessage ReqMessage
+	var reqBody ReqBody
+
+	reqBody.Request = "create"
+	reqBody.Publishers = 1
+
+	if param.Record {
+		reqBody.Record = true
+		reqBody.RecDir = "/tmp/records/" + strconv.FormatUint(c.CurrentSessionId, 10)
+
+		if err := os.MkdirAll(reqBody.RecDir, 0777); nil != err {
+			res.Error400(c.CTX, err, "C : JanusController::CreateRoom() - error in creating record directory")
+			return
+		}
+	} else {
+		reqBody.Record = false
+	}
+
+	hostName, err := c.getHostName(c.WebsocketConn)
+	if err != nil {
+		res.Error400(c.CTX, err, "C : JanusController::CreateRoom() - error in getting hostname in websocket url")
+		return
+	}
+
+	reqBody.Videocodec = "h264"
+	reqBody.Audiocodec = "opus"
+	reqBody.VideoorientExt = false
+	reqBody.Room = c.CurrentSessionId
+	reqBody.AdminKey = "teamgrit"
+	reqBody.Secret = "teamgrit"
+	reqBody.Post = config.CF.Prop.TextroomPost + "/" + hostName
+
+	reqMessage.Janus = "message"
+	reqMessage.Transaction = c.CurrentTransaction
+	reqMessage.Body = reqBody
+
+	jsonMessage, err := json.Marshal(reqMessage)
+	if err != nil {
+		res.Error400(c.CTX, err, "C : JanusController::CreateRoom() - request message error")
+		return
+	}
+
+	resp, err := client.R().
+		SetPathParams(map[string]string{
+			"sessionId":    strconv.FormatUint(c.CurrentSessionId, 10),
+			"pluginHandle": strconv.FormatUint(c.CurrentPluginHandle.VideoroomHandleId, 10),
+		}).
+		SetHeader("Content-Type", "application/json").
+		SetBody(string(jsonMessage)).
+		Post(fmt.Sprintf("%s/janus/{sessionId}/{pluginHandle}", c.JanusHttpConn))
+
+	if err != nil {
+		res.Error400(c.CTX, err, "C : JanusController::CreateRoom() - create videoroom")
+		return
+	}
+
+	fmt.Println("=== create video room ===")
+	fmt.Println(resp)
+
+	var videoroomCreateResp JanusPluginCreate
+
+	json.Unmarshal(resp.Body(), &videoroomCreateResp)
+
+	//create text room
+	reqBody.Textroom = "create"
+	reqBody.Room = c.CurrentSessionId
+	reqMessage.Body = reqBody
+
+	jsonMessage, err = json.Marshal(reqMessage)
+	if err != nil {
+		res.Error400(c.CTX, err, "C : JanusController::CreateRoom() - request message error")
+		return
+	}
+
+	resp, err = client.R().
+		SetPathParams(map[string]string{
+			"sessionId":    strconv.FormatUint(c.CurrentSessionId, 10),
+			"pluginHandle": strconv.FormatUint(c.CurrentPluginHandle.ChatHandleId, 10),
+		}).
+		SetHeader("Content-Type", "application/json").
+		SetBody(string(jsonMessage)).
+		Post(fmt.Sprintf("%s/janus/{sessionId}/{pluginHandle}", c.JanusHttpConn))
+
+	if err != nil {
+		res.Error400(c.CTX, err, "C : JanusController::CreateRoom() - create videoroom")
+		return
+	}
+
+	fmt.Println("=== create text room ===")
+	fmt.Println(resp)
+
+	var textroomCreateResp JanusPluginCreate
+
+	json.Unmarshal(resp.Body(), &textroomCreateResp)
+
+	// insert data into b2b_live
+	liveSeq := util.MakeUUID()
+	janusVO := &vo.JanusVO{
+		RDBConn: c.CTX.Values().Get(ctxkey.RDB_CONN).(*gorm.DB),
+		Auth: &Auth{
+			Key: c.CTX.Values().Get("AuthId").(string),
+		},
+		B2bLive: &B2bLive{
+			LiveSeq: liveSeq,
+			//	ServiceSeq:    1,
+			RoomName:    param.RoomName,
+			Record:      param.Record,
+			AccessPoint: c.WebsocketConn,
+			Videoroom:   strconv.FormatUint(videoroomCreateResp.PluginData.Data.Room, 10),
+			Textroom:    strconv.FormatUint(textroomCreateResp.PluginData.Data.Room, 10),
+			Description: param.Description,
+			Status:      "1000",
+			CreatedAt:   time.Now().UTC(),
+			UpdatedAt:   time.Now().UTC(),
+			Callback:    param.Callback,
+		},
+	}
+
+	err = c.JanusService.RegisterLive(janusVO)
+	if err != nil {
+		res.Error400(c.CTX, err, "C : JanusController::CreateRoom() - error in inserting into b2b_live")
+		return
+	}
+
+	janusParticipants := c.getParticipantList(videoroomCreateResp.PluginData.Data.Room)
+
+	//sessionKey := fmt.Sprintf("%s_%s", c.WebsocketConn, strconv.FormatUint(c.CurrentSessionId, 10))
+	sessionKey := fmt.Sprintf("%s_%s", c.WebsocketConn, strconv.FormatUint(videoroomCreateResp.PluginData.Data.Room, 10))
+
+	sessionValue := map[string]interface{}{
+		"participants": janusParticipants,
+		"count":        len(janusParticipants),
+		"record":       param.Record,
+		"callback":     param.Callback,
+	}
+
+	// append room info into redis
+	c.appendRedisRoomInfo(sessionKey, sessionValue)
+
+	res.Data = map[string]interface{}{
+		"access_point":        c.WebsocketConn,
+		"live_id":             liveSeq,
+		"session_id":          c.CurrentSessionId,
+		"videoroom_plugin_id": c.CurrentPluginHandle.VideoroomHandleId,
+		"textroom_plugin_id":  c.CurrentPluginHandle.ChatHandleId,
+		"videoroom_id":        videoroomCreateResp.PluginData.Data.Room,
+		"textroom_id":         textroomCreateResp.PluginData.Data.Room,
+		"record":              param.Record,
+		"timestamp": 		   strconv.FormatInt(time.Now().Unix(), 10),	
+	}
+
+	res.Send(c.CTX, "success")
+}
+
+// function :: get video room list
+func (c *JanusController) GetRoomList() {
+
+	res := new(vo.ResponseVO)
+	/*
+		isValid := c.CheckValidAccess()
+
+		if isValid == false {
+			res.Error400(c.CTX, errors.New("request is not allowed."), "Access Denied")
+			return
+		}
+	*/
+
+	janusVO := &vo.JanusVO{
+		RDBConn: c.CTX.Values().Get(ctxkey.RDB_CONN).(*gorm.DB),
+		Auth: &Auth{
+			Key: c.CTX.Values().Get("AuthId").(string),
+		},
+		B2bLive: &B2bLive{
+			Status: "1000",
+		},
+	}
+
+	list, err := c.JanusService.GetLiveRoomListByAccount(janusVO)
+	if err != nil {
+		res.Error400(c.CTX, err, "C : JanusController::GetRoomList() - error in get live room list")
+		return
+	}
+
+	res.Data = map[string]interface{}{
+		"room_count": len(list),
+		"room_list":  list,
+	}
+
+	res.Send(c.CTX, "success")
+}
+
+// function :: create janus session
+func (c *JanusController) CreateJanusSession() (JanusCreate, error) {
+
+	client := resty.New()
+	tr := strconv.FormatInt(time.Now().Unix(), 10)
+
+	// Janus Session Create
+	var sessionResp JanusCreate
+
+	var reqMessage ReqMessage
+	reqMessage.Janus = "create"
+	reqMessage.Transaction = tr
+
+	jsonCreate, err := json.Marshal(reqMessage)
+	if err != nil {
+		log.Fatal(err)
+		return sessionResp, errors.New("request message parsing error")
+	}
+
+	resp, err := client.R().
+		SetHeader("Content-Type", "application/json").
+		SetBody(string(jsonCreate)).
+		Post(fmt.Sprintf("%s/janus", c.JanusHttpConn))
+
+	if err != nil {
+		log.Fatal(err)
+		return sessionResp, errors.New("errors in getting response from janus")
+	}
+
+	fmt.Println(resp)
+
+	json.Unmarshal(resp.Body(), &sessionResp)
+
+	c.CurrentSessionId = sessionResp.Data.Id
+	c.CurrentTransaction = tr
+
+	return sessionResp, nil
+}
+
+// function :: attach video room plugin
+func (c *JanusController) AttachJanusPlugin() (JanusCreate, error) {
+
+	var pluginResp JanusCreate
+
+	if c.CurrentSessionId == 0 {
+		return pluginResp, errors.New("request message parsing error")
+	}
+
+	client := resty.New()
+	// Janus Videoroom Plugin Attach
+	var reqMessage ReqMessage
+
+	reqMessage.Janus = "attach"
+	reqMessage.Transaction = c.CurrentTransaction
+	reqMessage.Plugin = "janus.plugin.videoroom"
+
+	jsonAttach, err := json.Marshal(reqMessage)
+	if err != nil {
+		log.Fatal(err)
+		return pluginResp, errors.New("request message parsing error")
+	}
+
+	resp, err := client.R().
+		SetPathParams(map[string]string{
+			"sessionId": strconv.FormatUint(c.CurrentSessionId, 10),
+		}).
+		SetHeader("Content-Type", "application/json").
+		SetBody(string(jsonAttach)).
+		Post(fmt.Sprintf("%s/janus/{sessionId}", c.JanusHttpConn))
+
+	if err != nil {
+		log.Fatal(err)
+		return pluginResp, errors.New("attach videoroom plugin")
+	}
+
+	fmt.Println("=== create videoroom plugin ===")
+	fmt.Println(resp)
+
+	json.Unmarshal(resp.Body(), &pluginResp)
+
+	c.CurrentPluginHandle.VideoroomHandleId = pluginResp.Data.Id
+	// create text room handle
+	reqMessage.Plugin = "janus.plugin.textroom"
+
+	jsonAttach, err = json.Marshal(reqMessage)
+	if err != nil {
+		log.Fatal(err)
+		return pluginResp, errors.New("request message parsing error")
+	}
+
+	resp, err = client.R().
+		SetPathParams(map[string]string{
+			"sessionId": strconv.FormatUint(c.CurrentSessionId, 10),
+		}).
+		SetHeader("Content-Type", "application/json").
+		SetBody(string(jsonAttach)).
+		Post(fmt.Sprintf("%s/janus/{sessionId}", c.JanusHttpConn))
+
+	if err != nil {
+		log.Fatal(err)
+		return pluginResp, errors.New("attach textroom plugin")
+	}
+
+	fmt.Println("=== create textroom plugin ===")
+	fmt.Println(resp)
+
+	json.Unmarshal(resp.Body(), &pluginResp)
+
+	c.CurrentPluginHandle.ChatHandleId = pluginResp.Data.Id
+
+	return pluginResp, nil
+}
+
+func (c *JanusController) CheckValidAccess() bool {
+	clientKey := c.CTX.GetHeader("key")
+	if clientKey == "" {
+		return false
+	}
+	clientCode := clientKey[10:]
+	clientTs := clientKey[:10]
+	remoteAddr := c.CTX.RemoteAddr()
+	authId := c.CTX.Values().Get("AuthId").(string)
+	authPwd := c.CTX.Values().Get("AuthPwd").(string)
+
+	fmt.Println("######## " + strconv.FormatInt(time.Now().Unix(), 10))
+	fmt.Println("######## remoteAddr =  " + remoteAddr)
+
+	hash := sha256.New()
+	hash.Write([]byte(authId + "##" + remoteAddr))
+
+	createdCode := fmt.Sprintf("%X", hash.Sum(nil))
+
+	if clientCode != createdCode {
+		return false
+	}
+
+	minAccessTime := time.Now().Add(time.Hour * -1).Unix()
+	clientAccessTime, _ := strconv.ParseInt(clientTs, 10, 64)
+
+	if clientAccessTime < minAccessTime {
+		strconv.FormatInt(minAccessTime, 10)
+		return false
+	}
+
+	janusVO := &vo.JanusVO{
+		RDBConn: c.CTX.Values().Get(ctxkey.RDB_CONN).(*gorm.DB),
+		Auth: &Auth{
+			Key:        authId,
+			Password:   authPwd,
+			RemoteAddr: remoteAddr,
+		},
+	}
+
+	isValid, err := c.JanusService.GetServiceAuthInfo(janusVO)
+	if err != nil {
+		log.Fatal(err)
+		return false
+	}
+
+	return isValid
+}
+
+func (c *JanusController) SetMediaServer(wss string) {
+
+	redisPool := config.CF.DBConn.ConnRedis
+	redisConn := redisPool.Get()
+	defer redisConn.Close()
+
+	redisConnKeys, _ := redis.Strings(redisConn.Do("KEYS", "*"))
+
+	for _, key := range redisConnKeys {
+		fmt.Println(key)
+
+		if strings.Contains(key, wss) {
+			server := strings.Split(key, "#")[1]
+			mediaConns := strings.Split(server, "$$")
+
+			c.JanusHttpConn = mediaConns[0]
+			c.WebsocketConn = mediaConns[1]
+
+			return
+		}
+	}
+
+}
+
+func (c *JanusController) SetOptimalMediaServer() {
+
+	redisPool := config.CF.DBConn.ConnRedis
+	redisConn := redisPool.Get()
+	defer redisConn.Close()
+
+	redisConnKeys, _ := redis.Strings(redisConn.Do("SORT", "conn_keys", "BY", "conn_key#*->count", "ASC", "LIMIT", 0, 1))
+	mediaConns := strings.Split(redisConnKeys[0], "$$")
+
+	c.JanusHttpConn = mediaConns[0]
+	c.WebsocketConn = mediaConns[1]
+
+}
+
+func (c *JanusController) getRedisSessionKey(key string) string {
+	return fmt.Sprintf("%s$$%s", c.WebsocketConn, key)
+}
+
+func (c *JanusController) getParticipantList(roomId uint64) []JanusPluginVideoroomParticipant {
+	if c.JanusHttpConn == "" {
+		c.SetOptimalMediaServer()
+	}
+
+	if c.CurrentSessionId == 0 {
+		_, err := c.CreateJanusSession()
+
+		if err != nil {
+
+			return nil
+		}
+	}
+
+	if c.CurrentPluginHandle.VideoroomHandleId == 0 {
+		_, err := c.AttachJanusPlugin()
+		if err != nil {
+			log.Fatal(err)
+			return nil
+		}
+	}
+
+	client := resty.New()
+
+	// Janus Videoroom create
+	var reqMessage ReqMessage
+	var reqBody ReqBody
+	reqBody.Request = "listparticipants"
+	reqBody.Room = roomId
+	reqBody.Secret = "teamgrit"
+
+	reqMessage.Janus = "message"
+	reqMessage.Transaction = c.CurrentTransaction
+	reqMessage.Body = reqBody
+
+	jsonMessage, err := json.Marshal(reqMessage)
+	if err != nil {
+		log.Fatal(err)
+		return nil
+	}
+
+	resp, err := client.R().
+		SetPathParams(map[string]string{
+			"sessionId":    strconv.FormatUint(c.CurrentSessionId, 10),
+			"pluginHandle": strconv.FormatUint(c.CurrentPluginHandle.VideoroomHandleId, 10),
+		}).
+		SetHeader("Content-Type", "application/json").
+		SetBody(string(jsonMessage)).
+		Post(fmt.Sprintf("%s/janus/{sessionId}/{pluginHandle}", c.JanusHttpConn))
+
+	if err != nil {
+		log.Fatal(err)
+		return nil
+	}
+
+	var videoroomParticipantResp JanusPluginCreate
+
+	json.Unmarshal(resp.Body(), &videoroomParticipantResp)
+
+	return videoroomParticipantResp.PluginData.Data.Participants
+}
+
+func (c *JanusController) appendRedisRoomInfo(key string, value map[string]interface{}) {
+	// redis set
+	redisPool := config.CF.DBConn.SessionRedis
+	redisConn := redisPool.Get()
+	defer redisConn.Close()
+
+	jsonString, _ := json.Marshal(value)
+	_, err := redisConn.Do("APPEND", key, jsonString)
+	if err != nil {
+		panic(err)
+	}
+}
+
+func (c *JanusController) removeRedisRoomInfo(key string) {
+
+	redisPool := config.CF.DBConn.SessionRedis
+	redisConn := redisPool.Get()
+	defer redisConn.Close()
+
+	_, err := redisConn.Do("DEL", key)
+	if err != nil {
+		panic(err)
+	}
+}
+
+func (c *JanusController) getHostName(strUrl string) (string, error) {
+	u, err := url.Parse(strUrl)
+	if err != nil {
+		log.Fatal(err)
+		return "", err
+	}
+	return u.Hostname(), nil
+}
+
+func (c *JanusController) doesRoomExist(paramEndPoint string, paramRoomId string) (bool, error) {
+
+	if paramEndPoint == "" || paramRoomId == "" {
+		return false, errors.New("Parameter is missing.")
+	}
+
+	c.SetMediaServer(paramEndPoint)
+
+	_, err := c.CreateJanusSession()
+
+	if err != nil {
+		return false, err
+	}
+
+	_, err = c.AttachJanusPlugin()
+	if err != nil {
+		return false, err
+	}
+
+	// check if room_id exists or not
+	client := resty.New()
+	var reqMessage ReqMessage
+	var reqBody ReqBody
+	roomId, _ := strconv.ParseUint(paramRoomId, 10, 64)
+
+	reqBody.Request = "exists"
+	reqBody.Room = roomId
+
+	reqMessage.Janus = "message"
+	reqMessage.Transaction = c.CurrentTransaction
+	reqMessage.Body = reqBody
+
+	jsonMessage, err := json.Marshal(reqMessage)
+	if err != nil {
+		return false, err
+	}
+
+	resp, err := client.R().
+		SetPathParams(map[string]string{
+			"sessionId":    strconv.FormatUint(c.CurrentSessionId, 10),
+			"pluginHandle": strconv.FormatUint(c.CurrentPluginHandle.VideoroomHandleId, 10),
+		}).
+		SetHeader("Content-Type", "application/json").
+		SetBody(string(jsonMessage)).
+		Post(fmt.Sprintf("%s/janus/{sessionId}/{pluginHandle}", c.JanusHttpConn))
+
+	if err != nil {
+		return false, err
+	}
+
+	fmt.Println("=== check if video room exists ===")
+	fmt.Println(resp)
+
+	var videoroomExistsResp JanusPluginCreate
+
+	json.Unmarshal(resp.Body(), &videoroomExistsResp)
+
+	return videoroomExistsResp.PluginData.Data.Exists, nil
+
+}

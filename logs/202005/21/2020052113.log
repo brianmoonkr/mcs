@@ -1,0 +1,34 @@
+2020/05/21 04:46 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:47)[0m
+[33m[2020-05-21 04:46:45][0m [36;1m[0.81ms][0m SELECT * FROM b2b_auth a  WHERE (a.key = 'coshop') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/21 04:46 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:57)[0m
+[33m[2020-05-21 04:46:45][0m [36;1m[0.81ms][0m INSERT INTO `b2b_live` (`live_seq`,`service_seq`,`room_name`,`access_point`,`videoroom`,`textroom`,`record`,`description`,`status`,`created_at`,`updated_at`,`callback`) VALUES ('f7ade99a-3901-a10d-1dc2-b782446375c6',1,'Title','wss://edge.cojam.shop:18002','8866002986999330','8866002986999330',true,'desc','1000','2020-05-21 04:46:45','2020-05-21 04:46:45','http://52.231.204.44:3000/media') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/21 04:47 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:47)[0m
+[33m[2020-05-21 04:47:12][0m [36;1m[0.54ms][0m SELECT * FROM b2b_auth a  WHERE (a.key = 'coshop') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/21 04:47 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:57)[0m
+[33m[2020-05-21 04:47:12][0m [36;1m[0.63ms][0m INSERT INTO `b2b_live` (`live_seq`,`service_seq`,`room_name`,`access_point`,`videoroom`,`textroom`,`record`,`description`,`status`,`created_at`,`updated_at`,`callback`) VALUES ('38cb8b2d-7fef-8823-287d-a1e2a3f89144',1,'Title','wss://edge.cojam.shop:18001','6541171120082002','6541171120082002',true,'desc','1000','2020-05-21 04:47:12','2020-05-21 04:47:12','http://52.231.204.44:3000/media') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/21 04:47 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:47)[0m
+[33m[2020-05-21 04:47:54][0m [36;1m[0.75ms][0m SELECT * FROM b2b_auth a  WHERE (a.key = 'coshop') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/21 04:47 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:57)[0m
+[33m[2020-05-21 04:47:54][0m [36;1m[0.66ms][0m INSERT INTO `b2b_live` (`live_seq`,`service_seq`,`room_name`,`access_point`,`videoroom`,`textroom`,`record`,`description`,`status`,`created_at`,`updated_at`,`callback`) VALUES ('b8b36c71-eee1-8a88-9671-f0c2dc2434ad',1,'Title','wss://edge.cojam.shop:18001','177303420816696','177303420816696',true,'desc','1000','2020-05-21 04:47:54','2020-05-21 04:47:54','http://52.231.204.44:3000/media') 
+[36;31m[1 rows affected or returned ][0m 
+[ERRO] 2020/05/21 04:50 RequestID: , Access Denied : Fail Verify Parameter ReadJSON
+[ERRO] 2020/05/21 04:50 [RDB Transaction] RequestID: , RDB_TX Rollback()
+[ERRO] 2020/05/21 04:51 RequestID: , Access Denied : Fail Verify Parameter ReadJSON
+[ERRO] 2020/05/21 04:51 [RDB Transaction] RequestID: , RDB_TX Rollback()
+2020/05/21 04:51 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:47)[0m
+[33m[2020-05-21 04:51:47][0m [36;1m[0.79ms][0m SELECT * FROM b2b_auth a  WHERE (a.key = 'coshop') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/21 04:51 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:57)[0m
+[33m[2020-05-21 04:51:47][0m [36;1m[3.43ms][0m INSERT INTO `b2b_live` (`live_seq`,`service_seq`,`room_name`,`access_point`,`videoroom`,`textroom`,`record`,`description`,`status`,`created_at`,`updated_at`,`callback`) VALUES ('0fac48e5-169b-ff82-30b1-1a0cb65b52f4',1,'Title','wss://edge.cojam.shop:18002','2823032814240345','2823032814240345',true,'desc','1000','2020-05-21 04:51:47','2020-05-21 04:51:47','http://52.231.204.44:3000/media') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/21 04:54 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:47)[0m
+[33m[2020-05-21 04:54:30][0m [36;1m[0.66ms][0m SELECT * FROM b2b_auth a  WHERE (a.key = 'coshop') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/21 04:54 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:57)[0m
+[33m[2020-05-21 04:54:30][0m [36;1m[0.73ms][0m INSERT INTO `b2b_live` (`live_seq`,`service_seq`,`room_name`,`access_point`,`videoroom`,`textroom`,`record`,`description`,`status`,`created_at`,`updated_at`,`callback`) VALUES ('f68ac354-d703-623b-76e4-8357fe67f5f6',1,'Title','wss://edge.cojam.shop:18001','2480034825795706','2480034825795706',true,'desc','1000','2020-05-21 04:54:30','2020-05-21 04:54:30','http://52.231.204.44:3000/media') 
+[36;31m[1 rows affected or returned ][0m 

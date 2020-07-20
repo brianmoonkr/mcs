@@ -1,0 +1,15 @@
+2020/05/20 04:20 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-20 04:20:48][0m [36;1m[0.67ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '3ac95053-19dd-4dc8-c6b6-4f25e4026b91') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/20 04:20 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-20 04:20:49][0m [36;1m[0.55ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '3ac95053-19dd-4dc8-c6b6-4f25e4026b91') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/20 04:20 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:95)[0m
+[33m[2020-05-20 04:20:49][0m [36;1m[0.70ms][0m SELECT * FROM `b2b_live`  WHERE (live_seq = '3ac95053-19dd-4dc8-c6b6-4f25e4026b91') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/20 04:20 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:97)[0m
+[33m[2020-05-20 04:20:49][0m [36;1m[0.49ms][0m UPDATE `b2b_live` SET `status` = '9000', `updated_at` = '2020-05-20 04:20:49'  WHERE (live_seq = '3ac95053-19dd-4dc8-c6b6-4f25e4026b91') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/20 04:26 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-20 04:26:32][0m [36;1m[0.75ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '3ac95053-19dd-4dc8-c6b6-4f25e4026b91') 
+[36;31m[1 rows affected or returned ][0m 

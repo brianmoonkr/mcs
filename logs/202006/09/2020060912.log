@@ -1,0 +1,92 @@
+2020/06/09 03:01 ===== REDIS DB Flushed. =====
+
+2020/06/09 03:01 
+
+
+
+
+
+2020/06/09 03:01 ===== ****************************** =====
+2020/06/09 03:01 ===== ****************************** =====
+2020/06/09 03:01 ===== START : Media Control Service  =====
+2020/06/09 03:01 ===== **********(with iris)********* =====
+2020/06/09 03:01 ===== ****************************** =====
+
+2020/06/09 03:01 IRIS Version : 11.1.1
+2020/06/09 03:01 
+
+
+2020/06/09 03:01 ===== ShutDown START : CoJam Server With IRIS =====
+2020/06/09 03:01 Close RDB
+2020/06/09 03:01 Close Redis
+2020/06/09 03:01 Close SessionRedis
+2020/06/09 03:01 ===== ShutDown END : CoJam Server With IRIS =====
+2020/06/09 03:01 
+
+
+
+
+
+2020/06/09 03:01 ===== ****************************** =====
+2020/06/09 03:01 ===== ****************************** =====
+2020/06/09 03:01 ===== START : Media Control Service  =====
+2020/06/09 03:01 ===== **********(with iris)********* =====
+2020/06/09 03:01 ===== ****************************** =====
+
+2020/06/09 03:01 IRIS Version : 11.1.1
+2020/06/09 03:01 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:47)[0m
+[33m[2020-06-09 03:01:34][0m [36;1m[0.71ms][0m SELECT * FROM b2b_auth a  WHERE (a.key = 'coshop') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/09 03:01 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:57)[0m
+[33m[2020-06-09 03:01:34][0m [36;1m[0.59ms][0m INSERT INTO `b2b_live` (`live_seq`,`service_seq`,`room_name`,`access_point`,`videoroom`,`textroom`,`record`,`description`,`status`,`created_at`,`updated_at`,`callback`) VALUES ('c3c7595f-1336-1eb1-dcd0-c52a21835dd1',1,'swmoon12345678','wss://dev-edge.cojam.shop:18002','6526925385145471','6526925385145471',true,'testtesetest','1000','2020-06-09 03:01:34','2020-06-09 03:01:34','http://was.cojam.shop/cb/repo.do') 
+[36;31m[1 rows affected or returned ][0m 
+[ERRO] 2020/06/09 03:01 
+
+============================== ERROR LOG START ================================
+At Request: 500 /api/v2/create POST 10.2.0.7
+ERROR Message : READONLY You can't write against a read only slave.
+
+
+
+================================ ERROR LOG END ================================
+
+
+[ERRO] 2020/06/09 03:01 [RDB Transaction] RequestID: , RDB_TX Rollback()
+2020/06/09 03:02 
+
+
+
+
+
+2020/06/09 03:02 ===== ****************************** =====
+2020/06/09 03:02 ===== ****************************** =====
+2020/06/09 03:02 ===== START : Media Control Service  =====
+2020/06/09 03:02 ===== **********(with iris)********* =====
+2020/06/09 03:02 ===== ****************************** =====
+
+2020/06/09 03:02 IRIS Version : 11.1.1
+2020/06/09 03:03 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:47)[0m
+[33m[2020-06-09 03:03:03][0m [36;1m[0.64ms][0m SELECT * FROM b2b_auth a  WHERE (a.key = 'coshop') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/09 03:03 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:57)[0m
+[33m[2020-06-09 03:03:03][0m [36;1m[0.56ms][0m INSERT INTO `b2b_live` (`live_seq`,`service_seq`,`room_name`,`access_point`,`videoroom`,`textroom`,`record`,`description`,`status`,`created_at`,`updated_at`,`callback`) VALUES ('891ed172-14e1-5f16-6cf5-46b74a2b1a26',1,'swmoon12345678','wss://dev-edge.cojam.shop:18002','7449913555647031','7449913555647031',true,'testtesetest','1000','2020-06-09 03:03:03','2020-06-09 03:03:03','http://was.cojam.shop/cb/repo.do') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/09 03:41 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:47)[0m
+[33m[2020-06-09 03:41:33][0m [36;1m[0.67ms][0m SELECT * FROM b2b_auth a  WHERE (a.key = 'coshop') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/09 03:41 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:57)[0m
+[33m[2020-06-09 03:41:33][0m [36;1m[0.72ms][0m INSERT INTO `b2b_live` (`live_seq`,`service_seq`,`room_name`,`access_point`,`videoroom`,`textroom`,`record`,`description`,`status`,`created_at`,`updated_at`,`callback`) VALUES ('1066603b-aa89-206b-555a-13462654807a',1,'Title','wss://dev-edge.cojam.shop:18002','3805770840560152','3805770840560152',true,'desc','1000','2020-06-09 03:41:33','2020-06-09 03:41:33','https://dev-api.cojam.shop/media') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/09 03:41 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-06-09 03:41:52][0m [36;1m[1.62ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '1066603b-aa89-206b-555a-13462654807a') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/09 03:41 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:95)[0m
+[33m[2020-06-09 03:41:52][0m [36;1m[0.71ms][0m SELECT * FROM `b2b_live`  WHERE (live_seq = '1066603b-aa89-206b-555a-13462654807a') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/09 03:41 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:97)[0m
+[33m[2020-06-09 03:41:52][0m [36;1m[1.89ms][0m UPDATE `b2b_live` SET `status` = '9000', `updated_at` = '2020-06-09 03:41:52'  WHERE (live_seq = '1066603b-aa89-206b-555a-13462654807a') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/09 03:41 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-06-09 03:41:55][0m [36;1m[2.22ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '1066603b-aa89-206b-555a-13462654807a') 
+[36;31m[1 rows affected or returned ][0m 
+[ERRO] 2020/06/09 03:41 [RDB Transaction] RequestID: , RDB_TX Rollback()

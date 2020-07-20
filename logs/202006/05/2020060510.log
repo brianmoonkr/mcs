@@ -1,0 +1,8 @@
+2020/06/05 01:32 
+
+
+2020/06/05 01:32 ===== ShutDown START : CoJam Server With IRIS =====
+2020/06/05 01:32 Close RDB
+2020/06/05 01:32 Close Redis
+2020/06/05 01:32 Close SessionRedis
+2020/06/05 01:32 ===== ShutDown END : CoJam Server With IRIS =====

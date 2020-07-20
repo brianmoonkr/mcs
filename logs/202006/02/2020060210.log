@@ -1,0 +1,21 @@
+2020/06/02 01:40 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-06-02 01:40:31][0m [36;1m[1.07ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = 'cbcc7f2d-0849-0751-8b22-3c2dcf1c9d03') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/02 01:41 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-06-02 01:41:41][0m [36;1m[0.79ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = 'cbcc7f2d-0849-0751-8b22-3c2dcf1c9d03') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/02 01:43 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-06-02 01:43:27][0m [36;1m[0.76ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = 'cbcc7f2d-0849-0751-8b22-3c2dcf1c9d03') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/02 01:50 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-06-02 01:50:55][0m [36;1m[0.75ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = 'cbcc7f2d-0849-0751-8b22-3c2dcf1c9d03') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/02 01:54 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-06-02 01:54:23][0m [36;1m[1.08ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '7820123c-9002-e3b2-7977-4b27abb528d4') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/02 01:56 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-06-02 01:56:18][0m [36;1m[0.72ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '7820123c-9002-e3b2-7977-4b27abb528d4') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/02 01:57 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-06-02 01:57:40][0m [36;1m[0.74ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '7820123c-9002-e3b2-7977-4b27abb528d4') 
+[36;31m[1 rows affected or returned ][0m 

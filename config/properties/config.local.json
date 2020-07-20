@@ -1,0 +1,53 @@
+{
+  "domain": "192.168.0.45",
+  "address": "192.168.0.45",
+  "port": 9200,
+  "media_admin_port": 17088,
+  "media_admin_secret": "janusoverlord",
+  "project_name": "cojam",
+  "admin_info": {
+    "email": "admin@teamgrit.kr"
+  },
+  "janus_rec_cmd": "/opt/janus/bin/janus-pp-rec",
+  "janus_rec_path": "/tmp/records",
+  "repository_path": "/home/teamgrit/volumes/repo",
+  "textroom_post": "http://1.214.216.250:19200/chat",
+
+  "storage": {
+    "rdb": {
+      "url": "grit:grit@tcp(192.168.0.45:3306)/cojam?charset=utf8&parseTime=true",
+      "open": 100,
+      "idle": 10
+    },
+    "mongo": {
+      "url": "localhost:27017",
+      "pool": 50,
+      "db_name": [
+        "webrtc-mvp-log",
+        "mvp"
+      ]
+    },
+    "conn_redis": {
+      "url": "192.168.0.45:6379",
+      "max_idle": 50,
+      "max_active": 10000,
+      "dbnum": 3
+    },
+    "redis": {
+      "url": "192.168.0.45:6379",
+      "max_idle": 50,
+      "max_active": 10000,
+      "dbnum": 2
+    },
+    "session_redis": {
+      "url": "192.168.0.45:6379",
+      "max_idle": 50,
+      "max_active": 10000,
+      "dbnum": 1
+    }
+
+  },
+  "media_servers": [
+    "https://cojam.iptime.org:18089$$wss://cojam.iptime.org:8199"  
+  ]
+}

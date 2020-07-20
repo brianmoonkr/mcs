@@ -1,0 +1,54 @@
+2020/05/20 08:09 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:47)[0m
+[33m[2020-05-20 08:09:07][0m [36;1m[0.63ms][0m SELECT * FROM b2b_auth a  WHERE (a.key = 'coshop') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/20 08:09 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:57)[0m
+[33m[2020-05-20 08:09:07][0m [36;1m[0.61ms][0m INSERT INTO `b2b_live` (`live_seq`,`service_seq`,`room_name`,`access_point`,`videoroom`,`textroom`,`record`,`description`,`status`,`created_at`,`updated_at`,`callback`) VALUES ('2c993433-5539-d7a1-2007-595e61da3e40',1,'Title','wss://edge.cojam.shop:18002','6333421198658840','6333421198658840',true,'desc','1000','2020-05-20 08:09:07','2020-05-20 08:09:07','http://52.231.204.44:3000/media') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/20 08:09 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-20 08:09:27][0m [36;1m[0.78ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '2c993433-5539-d7a1-2007-595e61da3e40') 
+[36;31m[1 rows affected or returned ][0m 
+[ERRO] 2020/05/20 08:09 RequestID: , C : JanusController::RecreateRoom() - Videoroom id Already exists : Video room id already exists
+[ERRO] 2020/05/20 08:09 [RDB Transaction] RequestID: , RDB_TX Rollback()
+2020/05/20 08:18 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-20 08:18:56][0m [36;1m[0.65ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '2c993433-5539-d7a1-2007-595e61da3e40') 
+[36;31m[1 rows affected or returned ][0m 
+[ERRO] 2020/05/20 08:19 RequestID: , C : JanusController::RecreateRoom() - Videoroom id Already exists : Video room id already exists
+[ERRO] 2020/05/20 08:19 [RDB Transaction] RequestID: , RDB_TX Rollback()
+2020/05/20 08:20 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-20 08:20:14][0m [36;1m[0.65ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '2c993433-5539-d7a1-2007-595e61da3e40') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/20 08:24 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:47)[0m
+[33m[2020-05-20 08:24:56][0m [36;1m[0.59ms][0m SELECT * FROM b2b_auth a  WHERE (a.key = 'coshop') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/20 08:24 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:57)[0m
+[33m[2020-05-20 08:24:56][0m [36;1m[0.48ms][0m INSERT INTO `b2b_live` (`live_seq`,`service_seq`,`room_name`,`access_point`,`videoroom`,`textroom`,`record`,`description`,`status`,`created_at`,`updated_at`,`callback`) VALUES ('e2798c6f-ec6b-e183-6af0-596a9372bbce',1,'swmoon12345678','wss://edge.cojam.shop:18002','2030513606037913','2030513606037913',true,'testtesetest','1000','2020-05-20 08:24:56','2020-05-20 08:24:56','http://was.cojam.shop/cb/repo.do') 
+[36;31m[1 rows affected or returned ][0m 
+[ERRO] 2020/05/20 08:26 RequestID: , C : JanusController::RecreateRoom() - Videoroom id Already exists : Video room id already exists
+[ERRO] 2020/05/20 08:26 [RDB Transaction] RequestID: , RDB_TX Rollback()
+2020/05/20 08:54 
+
+
+
+
+
+2020/05/20 08:54 ===== ****************************** =====
+2020/05/20 08:54 ===== ****************************** =====
+2020/05/20 08:54 ===== START : Media Control Service  =====
+2020/05/20 08:54 ===== **********(with iris)********* =====
+2020/05/20 08:54 ===== ****************************** =====
+
+2020/05/20 08:54 IRIS Version : 11.1.1
+[ERRO] 2020/05/20 08:54 [RDB Transaction] RequestID: , RDB_TX Rollback()
+2020/05/20 08:58 
+
+
+
+
+
+2020/05/20 08:58 ===== ****************************** =====
+2020/05/20 08:58 ===== ****************************** =====
+2020/05/20 08:58 ===== START : Media Control Service  =====
+2020/05/20 08:58 ===== **********(with iris)********* =====
+2020/05/20 08:58 ===== ****************************** =====
+
+2020/05/20 08:58 IRIS Version : 11.1.1

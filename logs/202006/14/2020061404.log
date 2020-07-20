@@ -1,0 +1,131 @@
+2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[1.42ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '6479992045924027' AND access_point = 'wss://dev-edge.cojam.shop:18001') 
+[36;31m[1 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.48ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '8346987166744129' AND access_point = 'wss://dev-edge.cojam.shop:18001') 
+[36;31m[1 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.55ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '3922680682912294' AND access_point = 'wss://dev-edge.cojam.shop:18001') 
+[36;31m[1 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.46ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '5678' AND access_point = 'wss://dev-edge.cojam.shop:18001') 
+[36;31m[0 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.49ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '4967156936930459' AND access_point = 'wss://dev-edge.cojam.shop:18001') 
+[36;31m[1 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.54ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '1291320173091648' AND access_point = 'wss://dev-edge.cojam.shop:18001') 
+[36;31m[1 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.51ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '4834689780237503' AND access_point = 'wss://dev-edge.cojam.shop:18001') 
+[36;31m[1 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.50ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '6645014967672462' AND access_point = 'wss://dev-edge.cojam.shop:18001') 
+[36;31m[0 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.46ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '1234' AND access_point = 'wss://dev-edge.cojam.shop:18001') 
+[36;31m[0 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.57ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '8796356263387630' AND access_point = 'wss://dev-edge.cojam.shop:18001') 
+[36;31m[1 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.47ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '4111506997067966' AND access_point = 'wss://dev-edge.cojam.shop:18001') 
+[36;31m[1 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.58ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '4098949312922479' AND access_point = 'wss://dev-edge.cojam.shop:18001') 
+[36;31m[1 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.49ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '7071397755597712' AND access_point = 'wss://dev-edge.cojam.shop:18001') 
+[36;31m[1 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.57ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '8799343082678463' AND access_point = 'wss://dev-edge.cojam.shop:18001') 
+[36;31m[0 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.51ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '6230507815266174' AND access_point = 'wss://dev-edge.cojam.shop:18001') 
+[36;31m[1 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.58ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '5691751385585528' AND access_point = 'wss://dev-edge.cojam.shop:18001') 
+[36;31m[1 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[1.51ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '2627144067849746' AND access_point = 'wss://dev-edge.cojam.shop:18001') 
+[36;31m[0 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.50ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '214488588451041' AND access_point = 'wss://dev-edge.cojam.shop:18001') 
+[36;31m[0 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.61ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '7618325699578035' AND access_point = 'wss://dev-edge.cojam.shop:18001') 
+[36;31m[1 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.49ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '179841376135248' AND access_point = 'wss://dev-edge.cojam.shop:18001') 
+[36;31m[0 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.54ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '6691331894526194' AND access_point = 'wss://dev-edge.cojam.shop:18001') 
+[36;31m[1 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.53ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '4811932389473045' AND access_point = 'wss://dev-edge.cojam.shop:18001') 
+[36;31m[1 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.52ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '4688247196087861' AND access_point = 'wss://dev-edge.cojam.shop:18001') 
+[36;31m[1 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.61ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '4044854707380542' AND access_point = 'wss://dev-edge.cojam.shop:18001') 
+[36;31m[0 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.57ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '7918434767303949' AND access_point = 'wss://dev-edge.cojam.shop:18001') 
+[36;31m[1 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.44ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '6892197001155676' AND access_point = 'wss://dev-edge.cojam.shop:18001') 
+[36;31m[0 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.48ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '4862146125093879' AND access_point = 'wss://dev-edge.cojam.shop:18001') 
+[36;31m[0 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.42ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '7698645834548776' AND access_point = 'wss://dev-edge.cojam.shop:18001') 
+[36;31m[0 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.58ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '1481810882889973' AND access_point = 'wss://dev-edge.cojam.shop:18001') 
+[36;31m[1 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.48ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '881895827996064' AND access_point = 'wss://dev-edge.cojam.shop:18001') 
+[36;31m[1 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.60ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '6055013684050893' AND access_point = 'wss://dev-edge.cojam.shop:18001') 
+[36;31m[1 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.55ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '101403166775315' AND access_point = 'wss://dev-edge.cojam.shop:18001') 
+[36;31m[1 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.59ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '1429751837645861' AND access_point = 'wss://dev-edge.cojam.shop:18001') 
+[36;31m[1 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.45ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '332039344958077' AND access_point = 'wss://dev-edge.cojam.shop:18001') 
+[36;31m[0 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.57ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '1809285761273405' AND access_point = 'wss://dev-edge.cojam.shop:18001') 
+[36;31m[1 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.59ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '5999405431717326' AND access_point = 'wss://dev-edge.cojam.shop:18001') 
+[36;31m[1 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.64ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '8153568712026091' AND access_point = 'wss://dev-edge.cojam.shop:18001') 
+[36;31m[0 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.50ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '2528273407302654' AND access_point = 'wss://dev-edge.cojam.shop:18002') 
+[36;31m[1 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.49ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '6205968048263633' AND access_point = 'wss://dev-edge.cojam.shop:18002') 
+[36;31m[1 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.42ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '6767357556628434' AND access_point = 'wss://dev-edge.cojam.shop:18002') 
+[36;31m[0 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.41ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '5678' AND access_point = 'wss://dev-edge.cojam.shop:18002') 
+[36;31m[0 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.44ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '1976918548313061' AND access_point = 'wss://dev-edge.cojam.shop:18002') 
+[36;31m[1 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.37ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '1234' AND access_point = 'wss://dev-edge.cojam.shop:18002') 
+[36;31m[0 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.43ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '1931771501945422' AND access_point = 'wss://dev-edge.cojam.shop:18002') 
+[36;31m[0 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.48ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '5335183987993288' AND access_point = 'wss://dev-edge.cojam.shop:18002') 
+[36;31m[1 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.49ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '5214857703944680' AND access_point = 'wss://dev-edge.cojam.shop:18002') 
+[36;31m[0 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.47ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '6922141830955280' AND access_point = 'wss://dev-edge.cojam.shop:18002') 
+[36;31m[0 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.63ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '3224284496914793' AND access_point = 'wss://dev-edge.cojam.shop:18002') 
+[36;31m[1 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.50ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '1885412310292662' AND access_point = 'wss://dev-edge.cojam.shop:18002') 
+[36;31m[1 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.58ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '3131894521196517' AND access_point = 'wss://dev-edge.cojam.shop:18002') 
+[36;31m[1 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.46ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '5866821915834389' AND access_point = 'wss://dev-edge.cojam.shop:18002') 
+[36;31m[0 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[2.87ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '8017358170240462' AND access_point = 'wss://dev-edge.cojam.shop:18002') 
+[36;31m[1 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.56ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '1661357461346119' AND access_point = 'wss://dev-edge.cojam.shop:18002') 
+[36;31m[1 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.51ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '5238057036338209' AND access_point = 'wss://dev-edge.cojam.shop:18002') 
+[36;31m[0 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.50ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '3656773542692536' AND access_point = 'wss://dev-edge.cojam.shop:18002') 
+[36;31m[1 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.58ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '5861172944982473' AND access_point = 'wss://dev-edge.cojam.shop:18002') 
+[36;31m[1 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.60ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '59889585429353' AND access_point = 'wss://dev-edge.cojam.shop:18002') 
+[36;31m[1 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.49ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '653055150753269' AND access_point = 'wss://dev-edge.cojam.shop:18002') 
+[36;31m[0 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.54ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '1826590292879754' AND access_point = 'wss://dev-edge.cojam.shop:18002') 
+[36;31m[1 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.47ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '6526925385145471' AND access_point = 'wss://dev-edge.cojam.shop:18002') 
+[36;31m[0 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.48ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '3575600963235089' AND access_point = 'wss://dev-edge.cojam.shop:18002') 
+[36;31m[0 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.49ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '644979698064382' AND access_point = 'wss://dev-edge.cojam.shop:18002') 
+[36;31m[0 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.55ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '606703251769014' AND access_point = 'wss://dev-edge.cojam.shop:18002') 
+[36;31m[1 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.55ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '785928646649729' AND access_point = 'wss://dev-edge.cojam.shop:18002') 
+[36;31m[1 rows affected or returned ][0m 2020/06/13 19:10 [35m(/home/teamgrit/Projects/mcs/main.go:372)[0m
+[33m[2020-06-13 19:10:00][0m [36;1m[0.49ms][0m SELECT * FROM `b2b_live`  WHERE (videoroom = '87098586291521' AND access_point = 'wss://dev-edge.cojam.shop:18002') 
+[36;31m[0 rows affected or returned ][0m 

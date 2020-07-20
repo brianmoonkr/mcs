@@ -1,0 +1,3 @@
+2020/05/28 15:53 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-28 15:53:48][0m [36;1m[65.33ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '31e5f6af-da78-a1d2-822a-ba7f667e83a0') 
+[36;31m[1 rows affected or returned ][0m 

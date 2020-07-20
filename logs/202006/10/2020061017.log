@@ -1,0 +1,28 @@
+2020/06/10 08:05 
+
+
+
+
+
+2020/06/10 08:05 ===== ****************************** =====
+2020/06/10 08:05 ===== ****************************** =====
+2020/06/10 08:05 ===== START : Media Control Service  =====
+2020/06/10 08:05 ===== **********(with iris)********* =====
+2020/06/10 08:05 ===== ****************************** =====
+
+2020/06/10 08:05 IRIS Version : 11.1.1
+2020/06/10 08:58 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:47)[0m
+[33m[2020-06-10 08:58:45][0m [36;1m[1.25ms][0m SELECT * FROM b2b_auth a  WHERE (a.key = 'coshop') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/10 08:58 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:57)[0m
+[33m[2020-06-10 08:58:45][0m [36;1m[0.79ms][0m INSERT INTO `b2b_live` (`live_seq`,`service_seq`,`room_name`,`access_point`,`videoroom`,`textroom`,`record`,`description`,`status`,`created_at`,`updated_at`,`callback`) VALUES ('d96c095a-fdd3-c0f1-b87d-e7b384bdf956',1,'Title','wss://dev-edge.cojam.shop:18002','7490936346681493','7490936346681493',true,'desc','1000','2020-06-10 08:58:45','2020-06-10 08:58:45','https://dev-api.cojam.shop/media') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/10 08:59 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-06-10 08:59:14][0m [36;1m[1.04ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = 'd96c095a-fdd3-c0f1-b87d-e7b384bdf956') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/10 08:59 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:95)[0m
+[33m[2020-06-10 08:59:14][0m [36;1m[0.83ms][0m SELECT * FROM `b2b_live`  WHERE (live_seq = 'd96c095a-fdd3-c0f1-b87d-e7b384bdf956') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/10 08:59 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:97)[0m
+[33m[2020-06-10 08:59:14][0m [36;1m[0.79ms][0m UPDATE `b2b_live` SET `status` = '9000', `updated_at` = '2020-06-10 08:59:14'  WHERE (live_seq = 'd96c095a-fdd3-c0f1-b87d-e7b384bdf956') 
+[36;31m[1 rows affected or returned ][0m 

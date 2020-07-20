@@ -1,0 +1,45 @@
+2020/05/28 07:03 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-28 07:03:26][0m [36;1m[1.20ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '839aecdc-7cf7-7e0c-30e8-85e9be964f76') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/28 07:03 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-28 07:03:27][0m [36;1m[0.76ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '839aecdc-7cf7-7e0c-30e8-85e9be964f76') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/28 07:03 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:95)[0m
+[33m[2020-05-28 07:03:27][0m [36;1m[1.36ms][0m SELECT * FROM `b2b_live`  WHERE (live_seq = '839aecdc-7cf7-7e0c-30e8-85e9be964f76') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/28 07:03 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:97)[0m
+[33m[2020-05-28 07:03:27][0m [36;1m[1.50ms][0m UPDATE `b2b_live` SET `status` = '9000', `updated_at` = '2020-05-28 07:03:27'  WHERE (live_seq = '839aecdc-7cf7-7e0c-30e8-85e9be964f76') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/28 07:03 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-28 07:03:34][0m [36;1m[4.06ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '839aecdc-7cf7-7e0c-30e8-85e9be964f76') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/28 07:04 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-28 07:04:33][0m [36;1m[406.73ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '839aecdc-7cf7-7e0c-30e8-85e9be964f76') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/28 07:04 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-28 07:04:49][0m [36;1m[157.36ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = 'f5e68822-3893-09c6-3762-6ca3937240f9') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/28 07:05 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-28 07:05:59][0m [36;1m[0.91ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '839aecdc-7cf7-7e0c-30e8-85e9be964f76') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/28 07:06 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-28 07:06:04][0m [36;1m[0.81ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '839aecdc-7cf7-7e0c-30e8-85e9be964f76') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/28 07:11 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-28 07:11:28][0m [36;1m[0.65ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '839aecdc-7cf7-7e0c-30e8-85e9be964f76') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/28 07:11 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:95)[0m
+[33m[2020-05-28 07:11:28][0m [36;1m[0.90ms][0m SELECT * FROM `b2b_live`  WHERE (live_seq = '839aecdc-7cf7-7e0c-30e8-85e9be964f76') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/28 07:11 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:97)[0m
+[33m[2020-05-28 07:11:28][0m [36;1m[1.84ms][0m UPDATE `b2b_live` SET `status` = '9000', `updated_at` = '2020-05-28 07:11:28'  WHERE (live_seq = '839aecdc-7cf7-7e0c-30e8-85e9be964f76') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/28 07:12 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-28 07:12:25][0m [36;1m[187.01ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '839aecdc-7cf7-7e0c-30e8-85e9be964f76') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/28 07:33 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-28 07:33:39][0m [36;1m[48.39ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '839aecdc-7cf7-7e0c-30e8-85e9be964f76') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/28 07:35 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-28 07:35:50][0m [36;1m[0.83ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '839aecdc-7cf7-7e0c-30e8-85e9be964f76') 
+[36;31m[1 rows affected or returned ][0m 

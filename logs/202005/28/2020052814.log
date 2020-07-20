@@ -1,0 +1,201 @@
+2020/05/28 05:19 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-28 05:19:05][0m [36;1m[50.93ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = 'bcddec95-1223-be00-7031-165345bf1555') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/28 05:21 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-28 05:21:51][0m [36;1m[0.76ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = 'bcddec95-1223-be00-7031-165345bf1555') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/28 05:41 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-28 05:41:51][0m [36;1m[1.09ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '715d8714-bde1-0f2d-48eb-5c958de360cb') 
+[36;31m[0 rows affected or returned ][0m 
+[ERRO] 2020/05/28 05:41 
+
+============================== ERROR LOG START ================================
+At Request: 500 /api/v2/status POST 222.110.133.193
+ERROR Message : runtime error: invalid memory address or nil pointer dereference
+
+
+
+================================ ERROR LOG END ================================
+
+
+[ERRO] 2020/05/28 05:41 [RDB Transaction] RequestID: , RDB_TX Rollback()
+2020/05/28 05:41 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-28 05:41:52][0m [36;1m[0.76ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '715d8714-bde1-0f2d-48eb-5c958de360cb') 
+[36;31m[0 rows affected or returned ][0m 
+[ERRO] 2020/05/28 05:41 
+
+============================== ERROR LOG START ================================
+At Request: 500 /api/v2/status POST 222.110.133.193
+ERROR Message : runtime error: invalid memory address or nil pointer dereference
+
+
+
+================================ ERROR LOG END ================================
+
+
+[ERRO] 2020/05/28 05:41 [RDB Transaction] RequestID: , RDB_TX Rollback()
+2020/05/28 05:41 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-28 05:41:53][0m [36;1m[0.73ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '715d8714-bde1-0f2d-48eb-5c958de360cb') 
+[36;31m[0 rows affected or returned ][0m 
+[ERRO] 2020/05/28 05:41 
+
+============================== ERROR LOG START ================================
+At Request: 500 /api/v2/status POST 222.110.133.193
+ERROR Message : runtime error: invalid memory address or nil pointer dereference
+
+
+
+================================ ERROR LOG END ================================
+
+
+[ERRO] 2020/05/28 05:41 [RDB Transaction] RequestID: , RDB_TX Rollback()
+2020/05/28 05:54 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-28 05:54:43][0m [36;1m[1.50ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '715d8714-bde1-0f2d-48eb-5c958de360cb') 
+[36;31m[0 rows affected or returned ][0m 
+[ERRO] 2020/05/28 05:54 
+
+============================== ERROR LOG START ================================
+At Request: 500 /api/v2/status POST 175.211.38.237
+ERROR Message : runtime error: invalid memory address or nil pointer dereference
+
+
+
+================================ ERROR LOG END ================================
+
+
+[ERRO] 2020/05/28 05:54 [RDB Transaction] RequestID: , RDB_TX Rollback()
+2020/05/28 05:54 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-28 05:54:44][0m [36;1m[0.87ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '715d8714-bde1-0f2d-48eb-5c958de360cb') 
+[36;31m[0 rows affected or returned ][0m 
+[ERRO] 2020/05/28 05:54 
+
+============================== ERROR LOG START ================================
+At Request: 500 /api/v2/status POST 175.211.38.237
+ERROR Message : runtime error: invalid memory address or nil pointer dereference
+
+
+
+================================ ERROR LOG END ================================
+
+
+[ERRO] 2020/05/28 05:54 [RDB Transaction] RequestID: , RDB_TX Rollback()
+2020/05/28 05:54 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-28 05:54:49][0m [36;1m[0.71ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '715d8714-bde1-0f2d-48eb-5c958de360cb') 
+[36;31m[0 rows affected or returned ][0m 
+[ERRO] 2020/05/28 05:54 
+
+============================== ERROR LOG START ================================
+At Request: 500 /api/v2/status POST 175.211.38.237
+ERROR Message : runtime error: invalid memory address or nil pointer dereference
+
+
+
+================================ ERROR LOG END ================================
+
+
+[ERRO] 2020/05/28 05:54 [RDB Transaction] RequestID: , RDB_TX Rollback()
+2020/05/28 05:54 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-28 05:54:49][0m [36;1m[0.71ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '715d8714-bde1-0f2d-48eb-5c958de360cb') 
+[36;31m[0 rows affected or returned ][0m 
+[ERRO] 2020/05/28 05:54 
+
+============================== ERROR LOG START ================================
+At Request: 500 /api/v2/status POST 175.211.38.237
+ERROR Message : runtime error: invalid memory address or nil pointer dereference
+
+
+
+================================ ERROR LOG END ================================
+
+
+[ERRO] 2020/05/28 05:54 [RDB Transaction] RequestID: , RDB_TX Rollback()
+2020/05/28 05:54 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-28 05:54:50][0m [36;1m[0.79ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '715d8714-bde1-0f2d-48eb-5c958de360cb') 
+[36;31m[0 rows affected or returned ][0m 
+[ERRO] 2020/05/28 05:54 
+
+============================== ERROR LOG START ================================
+At Request: 500 /api/v2/status POST 175.211.38.237
+ERROR Message : runtime error: invalid memory address or nil pointer dereference
+
+
+
+================================ ERROR LOG END ================================
+
+
+[ERRO] 2020/05/28 05:54 [RDB Transaction] RequestID: , RDB_TX Rollback()
+2020/05/28 05:54 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-28 05:54:51][0m [36;1m[0.68ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '715d8714-bde1-0f2d-48eb-5c958de360cb') 
+[36;31m[0 rows affected or returned ][0m 
+[ERRO] 2020/05/28 05:54 
+
+============================== ERROR LOG START ================================
+At Request: 500 /api/v2/status POST 175.211.38.237
+ERROR Message : runtime error: invalid memory address or nil pointer dereference
+
+
+
+================================ ERROR LOG END ================================
+
+
+[ERRO] 2020/05/28 05:54 [RDB Transaction] RequestID: , RDB_TX Rollback()
+2020/05/28 05:54 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-28 05:54:59][0m [36;1m[0.79ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '715d8714-bde1-0f2d-48eb-5c958de360cb') 
+[36;31m[0 rows affected or returned ][0m 
+[ERRO] 2020/05/28 05:54 
+
+============================== ERROR LOG START ================================
+At Request: 500 /api/v2/status POST 175.211.38.237
+ERROR Message : runtime error: invalid memory address or nil pointer dereference
+
+
+
+================================ ERROR LOG END ================================
+
+
+[ERRO] 2020/05/28 05:54 [RDB Transaction] RequestID: , RDB_TX Rollback()
+2020/05/28 05:55 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-28 05:55:00][0m [36;1m[0.78ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '715d8714-bde1-0f2d-48eb-5c958de360cb') 
+[36;31m[0 rows affected or returned ][0m 
+[ERRO] 2020/05/28 05:55 
+
+============================== ERROR LOG START ================================
+At Request: 500 /api/v2/status POST 175.211.38.237
+ERROR Message : runtime error: invalid memory address or nil pointer dereference
+
+
+
+================================ ERROR LOG END ================================
+
+
+[ERRO] 2020/05/28 05:55 [RDB Transaction] RequestID: , RDB_TX Rollback()
+2020/05/28 05:55 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-28 05:55:01][0m [36;1m[0.69ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '715d8714-bde1-0f2d-48eb-5c958de360cb') 
+[36;31m[0 rows affected or returned ][0m 
+[ERRO] 2020/05/28 05:55 
+
+============================== ERROR LOG START ================================
+At Request: 500 /api/v2/status POST 175.211.38.237
+ERROR Message : runtime error: invalid memory address or nil pointer dereference
+
+
+
+================================ ERROR LOG END ================================
+
+
+[ERRO] 2020/05/28 05:55 [RDB Transaction] RequestID: , RDB_TX Rollback()
+2020/05/28 05:55 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:47)[0m
+[33m[2020-05-28 05:55:16][0m [36;1m[0.94ms][0m SELECT * FROM b2b_auth a  WHERE (a.key = 'coshop') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/28 05:55 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:57)[0m
+[33m[2020-05-28 05:55:16][0m [36;1m[4.25ms][0m INSERT INTO `b2b_live` (`live_seq`,`service_seq`,`room_name`,`access_point`,`videoroom`,`textroom`,`record`,`description`,`status`,`created_at`,`updated_at`,`callback`) VALUES ('dbd62b5e-6d8e-3d0b-3ed3-f29168fb6bcf',1,'Title','wss://edge.cojam.shop:18001','4247658904003073','4247658904003073',true,'desc','1000','2020-05-28 05:55:16','2020-05-28 05:55:16','http://52.231.204.44:3000/media') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/28 05:55 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-28 05:55:25][0m [36;1m[1.88ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = 'dbd62b5e-6d8e-3d0b-3ed3-f29168fb6bcf') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/28 05:56 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:47)[0m
+[33m[2020-05-28 05:56:49][0m [36;1m[0.66ms][0m SELECT * FROM b2b_auth a  WHERE (a.key = 'coshop') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/28 05:56 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:57)[0m
+[33m[2020-05-28 05:56:49][0m [36;1m[0.72ms][0m INSERT INTO `b2b_live` (`live_seq`,`service_seq`,`room_name`,`access_point`,`videoroom`,`textroom`,`record`,`description`,`status`,`created_at`,`updated_at`,`callback`) VALUES ('0e99557c-6dc0-d9b4-47da-17eb24015f9e',1,'swmoon12345678','wss://edge.cojam.shop:18002','4657093668530366','4657093668530366',true,'testtesetest','1000','2020-05-28 05:56:49','2020-05-28 05:56:49','http://was.cojam.shop/cb/repo.do') 
+[36;31m[1 rows affected or returned ][0m 

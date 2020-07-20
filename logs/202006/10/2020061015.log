@@ -1,0 +1,4 @@
+2020/06/10 06:07 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-06-10 06:07:41][0m [36;1m[1.17ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = 'cbcc7f2d-0849-0751-8b22-3c2dcf1c9d03') 
+[36;31m[1 rows affected or returned ][0m 
+[ERRO] 2020/06/10 06:07 [RDB Transaction] RequestID: , RDB_TX Rollback()

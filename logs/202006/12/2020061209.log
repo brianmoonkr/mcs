@@ -1,0 +1,15 @@
+2020/06/12 00:42 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:47)[0m
+[33m[2020-06-12 00:42:08][0m [36;1m[0.71ms][0m SELECT * FROM b2b_auth a  WHERE (a.key = 'coshop') 
+[36;31m[1 rows affected or returned ][0m 2020/06/12 00:42 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:57)[0m
+[33m[2020-06-12 00:42:08][0m [36;1m[0.79ms][0m INSERT INTO `b2b_live` (`live_seq`,`service_seq`,`room_name`,`access_point`,`videoroom`,`textroom`,`record`,`description`,`status`,`created_at`,`updated_at`,`callback`) VALUES ('961d3352-e20b-ef59-38da-0047b02de3db',1,'Title','wss://dev-edge.cojam.shop:18002','6205968048263633','6205968048263633',true,'desc','1000','2020-06-12 00:42:08','2020-06-12 00:42:08','https://dev-api.cojam.shop/media') 
+[36;31m[1 rows affected or returned ][0m 2020/06/12 00:42 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-06-12 00:42:36][0m [36;1m[1.07ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '961d3352-e20b-ef59-38da-0047b02de3db') 
+[36;31m[1 rows affected or returned ][0m 2020/06/12 00:43 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-06-12 00:43:15][0m [36;1m[0.71ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '961d3352-e20b-ef59-38da-0047b02de3db') 
+[36;31m[1 rows affected or returned ][0m 2020/06/12 00:44 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-06-12 00:44:48][0m [36;1m[0.65ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '961d3352-e20b-ef59-38da-0047b02de3db') 
+[36;31m[1 rows affected or returned ][0m 2020/06/12 00:44 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:95)[0m
+[33m[2020-06-12 00:44:48][0m [36;1m[0.72ms][0m SELECT * FROM `b2b_live`  WHERE (live_seq = '961d3352-e20b-ef59-38da-0047b02de3db') 
+[36;31m[1 rows affected or returned ][0m 2020/06/12 00:44 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:97)[0m
+[33m[2020-06-12 00:44:48][0m [36;1m[0.60ms][0m UPDATE `b2b_live` SET `status` = '9000', `updated_at` = '2020-06-12 00:44:48'  WHERE (live_seq = '961d3352-e20b-ef59-38da-0047b02de3db') 
+[36;31m[1 rows affected or returned ][0m 

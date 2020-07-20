@@ -1,0 +1,6 @@
+2020/05/26 09:02 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-26 09:02:51][0m [36;1m[0.73ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '9ae00a55-2caf-fa52-9464-c432c991d197') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/26 09:03 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-26 09:03:17][0m [36;1m[0.71ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '9ae00a55-2caf-fa52-9464-c432c991d197') 
+[36;31m[1 rows affected or returned ][0m 

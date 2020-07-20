@@ -1,0 +1,17 @@
+2020/06/01 18:35 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-06-01 18:35:14][0m [36;1m[0.98ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = 'cbcc7f2d-0849-0751-8b22-3c2dcf1c9d03') 
+[36;31m[1 rows affected or returned ][0m 2020/06/01 18:35 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-06-01 18:35:17][0m [36;1m[0.76ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = 'cbcc7f2d-0849-0751-8b22-3c2dcf1c9d03') 
+[36;31m[1 rows affected or returned ][0m 2020/06/01 18:35 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:95)[0m
+[33m[2020-06-01 18:35:17][0m [36;1m[0.73ms][0m SELECT * FROM `b2b_live`  WHERE (live_seq = 'cbcc7f2d-0849-0751-8b22-3c2dcf1c9d03') 
+[36;31m[1 rows affected or returned ][0m 2020/06/01 18:35 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:97)[0m
+[33m[2020-06-01 18:35:17][0m [36;1m[0.68ms][0m UPDATE `b2b_live` SET `status` = '9000', `updated_at` = '2020-06-01 18:35:17'  WHERE (live_seq = 'cbcc7f2d-0849-0751-8b22-3c2dcf1c9d03') 
+[36;31m[1 rows affected or returned ][0m 2020/06/01 18:59 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-06-01 18:59:22][0m [36;1m[1.25ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = 'cbcc7f2d-0849-0751-8b22-3c2dcf1c9d03') 
+[36;31m[1 rows affected or returned ][0m 2020/06/01 18:59 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-06-01 18:59:30][0m [36;1m[0.74ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = 'cbcc7f2d-0849-0751-8b22-3c2dcf1c9d03') 
+[36;31m[1 rows affected or returned ][0m 2020/06/01 18:59 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-06-01 18:59:42][0m [36;1m[1.07ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = 'dd54c4f8-6861-0497-e346-2ee6b1a7a952') 
+[36;31m[1 rows affected or returned ][0m 2020/06/01 18:59 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-06-01 18:59:49][0m [36;1m[0.70ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = 'dd54c4f8-6861-0497-e346-2ee6b1a7a952') 
+[36;31m[1 rows affected or returned ][0m 

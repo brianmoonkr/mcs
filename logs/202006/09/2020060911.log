@@ -1,0 +1,227 @@
+2020/06/09 02:43 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:47)[0m
+[33m[2020-06-09 02:43:52][0m [36;1m[4.98ms][0m SELECT * FROM b2b_auth a  WHERE (a.key = 'coshop') 
+[36;31m[1 rows affected or returned ][0m 2020/06/09 02:43 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:57)[0m
+[33m[2020-06-09 02:43:52][0m [36;1m[2.33ms][0m INSERT INTO `b2b_live` (`live_seq`,`service_seq`,`room_name`,`access_point`,`videoroom`,`textroom`,`record`,`description`,`status`,`created_at`,`updated_at`,`callback`) VALUES ('d8940137-fc98-c78e-266a-3b820528cbdd',1,'Title','wss://dev-edge.cojam.shop:18002','5866821915834389','5866821915834389',true,'desc','1000','2020-06-09 02:43:52','2020-06-09 02:43:52','https://dev-api.cojam.shop/media') 
+[36;31m[1 rows affected or returned ][0m [ERRO] 2020/06/09 02:43 
+
+============================== ERROR LOG START ================================
+At Request: 500 /api/v2/create POST 10.0.0.15
+ERROR Message : READONLY You can't write against a read only slave.
+
+
+
+================================ ERROR LOG END ================================
+
+[ERRO] 2020/06/09 02:43 [RDB Transaction] RequestID: , RDB_TX Rollback()2020/06/09 02:44 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:47)[0m
+[33m[2020-06-09 02:44:02][0m [36;1m[0.82ms][0m SELECT * FROM b2b_auth a  WHERE (a.key = 'coshop') 
+[36;31m[1 rows affected or returned ][0m 2020/06/09 02:44 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:57)[0m
+[33m[2020-06-09 02:44:02][0m [36;1m[0.67ms][0m INSERT INTO `b2b_live` (`live_seq`,`service_seq`,`room_name`,`access_point`,`videoroom`,`textroom`,`record`,`description`,`status`,`created_at`,`updated_at`,`callback`) VALUES ('04f872a2-a1fa-a63c-681b-297eecbb0582',1,'Title','wss://dev-edge.cojam.shop:18002','3575600963235089','3575600963235089',true,'desc','1000','2020-06-09 02:44:02','2020-06-09 02:44:02','https://dev-api.cojam.shop/media') 
+[36;31m[1 rows affected or returned ][0m [ERRO] 2020/06/09 02:44 
+
+============================== ERROR LOG START ================================
+At Request: 500 /api/v2/create POST 10.0.0.15
+ERROR Message : READONLY You can't write against a read only slave.
+
+
+
+================================ ERROR LOG END ================================
+
+[ERRO] 2020/06/09 02:44 [RDB Transaction] RequestID: , RDB_TX Rollback()2020/06/09 02:44 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:47)[0m
+[33m[2020-06-09 02:44:14][0m [36;1m[0.59ms][0m SELECT * FROM b2b_auth a  WHERE (a.key = 'coshop') 
+[36;31m[1 rows affected or returned ][0m 2020/06/09 02:44 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:57)[0m
+[33m[2020-06-09 02:44:14][0m [36;1m[0.59ms][0m INSERT INTO `b2b_live` (`live_seq`,`service_seq`,`room_name`,`access_point`,`videoroom`,`textroom`,`record`,`description`,`status`,`created_at`,`updated_at`,`callback`) VALUES ('7cb1bba5-a2db-630a-09f6-169853075540',1,'Title','wss://dev-edge.cojam.shop:18001','214488588451041','214488588451041',true,'desc','1000','2020-06-09 02:44:14','2020-06-09 02:44:14','https://dev-api.cojam.shop/media') 
+[36;31m[1 rows affected or returned ][0m [ERRO] 2020/06/09 02:44 
+
+============================== ERROR LOG START ================================
+At Request: 500 /api/v2/create POST 10.0.0.15
+ERROR Message : READONLY You can't write against a read only slave.
+
+
+
+================================ ERROR LOG END ================================
+
+[ERRO] 2020/06/09 02:44 [RDB Transaction] RequestID: , RDB_TX Rollback()2020/06/09 02:44 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:47)[0m
+[33m[2020-06-09 02:44:58][0m [36;1m[0.77ms][0m SELECT * FROM b2b_auth a  WHERE (a.key = 'coshop') 
+[36;31m[1 rows affected or returned ][0m 2020/06/09 02:44 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:57)[0m
+[33m[2020-06-09 02:44:58][0m [36;1m[0.75ms][0m INSERT INTO `b2b_live` (`live_seq`,`service_seq`,`room_name`,`access_point`,`videoroom`,`textroom`,`record`,`description`,`status`,`created_at`,`updated_at`,`callback`) VALUES ('ac2c52dd-d64e-8d8c-cdf9-278e2fd98ee2',1,'Title','wss://dev-edge.cojam.shop:18002','6922141830955280','6922141830955280',true,'desc','1000','2020-06-09 02:44:58','2020-06-09 02:44:58','https://dev-api.cojam.shop/media') 
+[36;31m[1 rows affected or returned ][0m [ERRO] 2020/06/09 02:44 
+
+============================== ERROR LOG START ================================
+At Request: 500 /api/v2/create POST 10.0.0.15
+ERROR Message : READONLY You can't write against a read only slave.
+
+
+
+================================ ERROR LOG END ================================
+
+[ERRO] 2020/06/09 02:44 [RDB Transaction] RequestID: , RDB_TX Rollback()2020/06/09 02:45 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:47)[0m
+[33m[2020-06-09 02:45:28][0m [36;1m[2.15ms][0m SELECT * FROM b2b_auth a  WHERE (a.key = 'coshop') 
+[36;31m[1 rows affected or returned ][0m 2020/06/09 02:45 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:57)[0m
+[33m[2020-06-09 02:45:28][0m [36;1m[0.72ms][0m INSERT INTO `b2b_live` (`live_seq`,`service_seq`,`room_name`,`access_point`,`videoroom`,`textroom`,`record`,`description`,`status`,`created_at`,`updated_at`,`callback`) VALUES ('034f5f1f-4fbf-2c35-3c1e-b7b2c1ab913d',1,'Title','wss://dev-edge.cojam.shop:18002','5214857703944680','5214857703944680',true,'desc','1000','2020-06-09 02:45:28','2020-06-09 02:45:28','https://dev-api.cojam.shop/media') 
+[36;31m[1 rows affected or returned ][0m [ERRO] 2020/06/09 02:45 
+
+============================== ERROR LOG START ================================
+At Request: 500 /api/v2/create POST 10.0.0.15
+ERROR Message : READONLY You can't write against a read only slave.
+
+
+
+================================ ERROR LOG END ================================
+
+[ERRO] 2020/06/09 02:45 [RDB Transaction] RequestID: , RDB_TX Rollback()2020/06/09 02:47 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:47)[0m
+[33m[2020-06-09 02:47:39][0m [36;1m[0.74ms][0m SELECT * FROM b2b_auth a  WHERE (a.key = 'coshop') 
+[36;31m[1 rows affected or returned ][0m 2020/06/09 02:47 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:57)[0m
+[33m[2020-06-09 02:47:39][0m [36;1m[0.72ms][0m INSERT INTO `b2b_live` (`live_seq`,`service_seq`,`room_name`,`access_point`,`videoroom`,`textroom`,`record`,`description`,`status`,`created_at`,`updated_at`,`callback`) VALUES ('8e21615f-4fda-bd00-0a74-5339050073d2',1,'Title','wss://dev-edge.cojam.shop:18002','87098586291521','87098586291521',true,'desc','1000','2020-06-09 02:47:39','2020-06-09 02:47:39','https://dev-api.cojam.shop/media') 
+[36;31m[1 rows affected or returned ][0m [ERRO] 2020/06/09 02:47 
+
+============================== ERROR LOG START ================================
+At Request: 500 /api/v2/create POST 10.0.0.15
+ERROR Message : READONLY You can't write against a read only slave.
+
+
+
+================================ ERROR LOG END ================================
+
+[ERRO] 2020/06/09 02:47 [RDB Transaction] RequestID: , RDB_TX Rollback()2020/06/09 02:47 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:47)[0m
+[33m[2020-06-09 02:47:49][0m [36;1m[0.70ms][0m SELECT * FROM b2b_auth a  WHERE (a.key = 'coshop') 
+[36;31m[1 rows affected or returned ][0m 2020/06/09 02:47 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:57)[0m
+[33m[2020-06-09 02:47:49][0m [36;1m[0.56ms][0m INSERT INTO `b2b_live` (`live_seq`,`service_seq`,`room_name`,`access_point`,`videoroom`,`textroom`,`record`,`description`,`status`,`created_at`,`updated_at`,`callback`) VALUES ('03598845-42ea-59a1-1799-00669dd78eb6',1,'Title','wss://dev-edge.cojam.shop:18002','644979698064382','644979698064382',true,'desc','1000','2020-06-09 02:47:49','2020-06-09 02:47:49','https://dev-api.cojam.shop/media') 
+[36;31m[1 rows affected or returned ][0m [ERRO] 2020/06/09 02:47 
+
+============================== ERROR LOG START ================================
+At Request: 500 /api/v2/create POST 10.0.0.15
+ERROR Message : READONLY You can't write against a read only slave.
+
+
+
+================================ ERROR LOG END ================================
+
+[ERRO] 2020/06/09 02:47 [RDB Transaction] RequestID: , RDB_TX Rollback()2020/06/09 02:49 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:47)[0m
+[33m[2020-06-09 02:49:10][0m [36;1m[0.66ms][0m SELECT * FROM b2b_auth a  WHERE (a.key = 'coshop') 
+[36;31m[1 rows affected or returned ][0m 2020/06/09 02:49 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:57)[0m
+[33m[2020-06-09 02:49:10][0m [36;1m[0.65ms][0m INSERT INTO `b2b_live` (`live_seq`,`service_seq`,`room_name`,`access_point`,`videoroom`,`textroom`,`record`,`description`,`status`,`created_at`,`updated_at`,`callback`) VALUES ('8bd5bb83-f26e-a641-03dc-fb5de240a1b3',1,'Title','wss://dev-edge.cojam.shop:18002','1931771501945422','1931771501945422',true,'desc','1000','2020-06-09 02:49:10','2020-06-09 02:49:10','https://dev-api.cojam.shop/media') 
+[36;31m[1 rows affected or returned ][0m [ERRO] 2020/06/09 02:49 
+
+============================== ERROR LOG START ================================
+At Request: 500 /api/v2/create POST 10.0.0.15
+ERROR Message : READONLY You can't write against a read only slave.
+
+
+
+================================ ERROR LOG END ================================
+
+[ERRO] 2020/06/09 02:49 [RDB Transaction] RequestID: , RDB_TX Rollback()2020/06/09 02:49 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:47)[0m
+[33m[2020-06-09 02:49:14][0m [36;1m[0.77ms][0m SELECT * FROM b2b_auth a  WHERE (a.key = 'coshop') 
+[36;31m[1 rows affected or returned ][0m 2020/06/09 02:49 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:57)[0m
+[33m[2020-06-09 02:49:14][0m [36;1m[1.32ms][0m INSERT INTO `b2b_live` (`live_seq`,`service_seq`,`room_name`,`access_point`,`videoroom`,`textroom`,`record`,`description`,`status`,`created_at`,`updated_at`,`callback`) VALUES ('bd9efa75-72ec-e3c4-7e04-de605fe0be4f',1,'Title','wss://dev-edge.cojam.shop:18002','653055150753269','653055150753269',true,'desc','1000','2020-06-09 02:49:14','2020-06-09 02:49:14','https://dev-api.cojam.shop/media') 
+[36;31m[1 rows affected or returned ][0m [ERRO] 2020/06/09 02:49 
+
+============================== ERROR LOG START ================================
+At Request: 500 /api/v2/create POST 10.0.0.15
+ERROR Message : READONLY You can't write against a read only slave.
+
+
+
+================================ ERROR LOG END ================================
+
+[ERRO] 2020/06/09 02:49 [RDB Transaction] RequestID: , RDB_TX Rollback()2020/06/09 02:49 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:47)[0m
+[33m[2020-06-09 02:49:59][0m [36;1m[0.72ms][0m SELECT * FROM b2b_auth a  WHERE (a.key = 'coshop') 
+[36;31m[1 rows affected or returned ][0m 2020/06/09 02:49 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:57)[0m
+[33m[2020-06-09 02:49:59][0m [36;1m[0.87ms][0m INSERT INTO `b2b_live` (`live_seq`,`service_seq`,`room_name`,`access_point`,`videoroom`,`textroom`,`record`,`description`,`status`,`created_at`,`updated_at`,`callback`) VALUES ('d3ce5187-737b-ea72-f378-212b0bd7fffb',1,'Title','wss://dev-edge.cojam.shop:18001','4044854707380542','4044854707380542',true,'desc','1000','2020-06-09 02:49:59','2020-06-09 02:49:59','https://dev-api.cojam.shop/media') 
+[36;31m[1 rows affected or returned ][0m [ERRO] 2020/06/09 02:49 
+
+============================== ERROR LOG START ================================
+At Request: 500 /api/v2/create POST 10.0.0.15
+ERROR Message : READONLY You can't write against a read only slave.
+
+
+
+================================ ERROR LOG END ================================
+
+[ERRO] 2020/06/09 02:49 [RDB Transaction] RequestID: , RDB_TX Rollback()2020/06/09 02:52 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:47)[0m
+[33m[2020-06-09 02:52:26][0m [36;1m[0.93ms][0m SELECT * FROM b2b_auth a  WHERE (a.key = 'coshop') 
+[36;31m[1 rows affected or returned ][0m 2020/06/09 02:52 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:57)[0m
+[33m[2020-06-09 02:52:26][0m [36;1m[0.68ms][0m INSERT INTO `b2b_live` (`live_seq`,`service_seq`,`room_name`,`access_point`,`videoroom`,`textroom`,`record`,`description`,`status`,`created_at`,`updated_at`,`callback`) VALUES ('1b173a33-0f5a-b1e9-480d-1aed978b9484',1,'title','wss://dev-edge.cojam.shop:18001','6892197001155676','6892197001155676',false,'desc','1000','2020-06-09 02:52:26','2020-06-09 02:52:26','https://dev-api.cojam.shop/media') 
+[36;31m[1 rows affected or returned ][0m [ERRO] 2020/06/09 02:52 
+
+============================== ERROR LOG START ================================
+At Request: 500 /api/v2/create POST 10.0.0.15
+ERROR Message : READONLY You can't write against a read only slave.
+
+
+
+================================ ERROR LOG END ================================
+
+[ERRO] 2020/06/09 02:52 [RDB Transaction] RequestID: , RDB_TX Rollback()2020/06/09 02:52 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:47)[0m
+[33m[2020-06-09 02:52:28][0m [36;1m[0.69ms][0m SELECT * FROM b2b_auth a  WHERE (a.key = 'coshop') 
+[36;31m[1 rows affected or returned ][0m 2020/06/09 02:52 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:57)[0m
+[33m[2020-06-09 02:52:28][0m [36;1m[0.62ms][0m INSERT INTO `b2b_live` (`live_seq`,`service_seq`,`room_name`,`access_point`,`videoroom`,`textroom`,`record`,`description`,`status`,`created_at`,`updated_at`,`callback`) VALUES ('0f5358f4-d1f2-1340-7fe2-227adc5a6669',1,'Title','wss://dev-edge.cojam.shop:18001','4862146125093879','4862146125093879',true,'desc','1000','2020-06-09 02:52:28','2020-06-09 02:52:28','https://dev-api.cojam.shop/media') 
+[36;31m[1 rows affected or returned ][0m [ERRO] 2020/06/09 02:52 
+
+============================== ERROR LOG START ================================
+At Request: 500 /api/v2/create POST 10.0.0.15
+ERROR Message : READONLY You can't write against a read only slave.
+
+
+
+================================ ERROR LOG END ================================
+
+[ERRO] 2020/06/09 02:52 [RDB Transaction] RequestID: , RDB_TX Rollback()2020/06/09 02:53 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:47)[0m
+[33m[2020-06-09 02:53:18][0m [36;1m[0.96ms][0m SELECT * FROM b2b_auth a  WHERE (a.key = 'coshop') 
+[36;31m[1 rows affected or returned ][0m 2020/06/09 02:53 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:57)[0m
+[33m[2020-06-09 02:53:18][0m [36;1m[0.61ms][0m INSERT INTO `b2b_live` (`live_seq`,`service_seq`,`room_name`,`access_point`,`videoroom`,`textroom`,`record`,`description`,`status`,`created_at`,`updated_at`,`callback`) VALUES ('fd237b97-842e-8fbe-df54-4541ec28e1b3',1,'Title','wss://dev-edge.cojam.shop:18001','7698645834548776','7698645834548776',true,'desc','1000','2020-06-09 02:53:18','2020-06-09 02:53:18','https://dev-api.cojam.shop/media') 
+[36;31m[1 rows affected or returned ][0m [ERRO] 2020/06/09 02:53 
+
+============================== ERROR LOG START ================================
+At Request: 500 /api/v2/create POST 10.0.0.15
+ERROR Message : READONLY You can't write against a read only slave.
+
+
+
+================================ ERROR LOG END ================================
+
+[ERRO] 2020/06/09 02:53 [RDB Transaction] RequestID: , RDB_TX Rollback()2020/06/09 02:56 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:47)[0m
+[33m[2020-06-09 02:56:27][0m [36;1m[0.87ms][0m SELECT * FROM b2b_auth a  WHERE (a.key = 'coshop') 
+[36;31m[1 rows affected or returned ][0m 2020/06/09 02:56 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:57)[0m
+[33m[2020-06-09 02:56:27][0m [36;1m[0.63ms][0m INSERT INTO `b2b_live` (`live_seq`,`service_seq`,`room_name`,`access_point`,`videoroom`,`textroom`,`record`,`description`,`status`,`created_at`,`updated_at`,`callback`) VALUES ('0ba53a9b-f585-f4b7-03e8-de8ba8b57c6e',1,'swmoon12345678','wss://dev-edge.cojam.shop:18001','179841376135248','179841376135248',true,'testtesetest','1000','2020-06-09 02:56:27','2020-06-09 02:56:27','http://was.cojam.shop/cb/repo.do') 
+[36;31m[1 rows affected or returned ][0m [ERRO] 2020/06/09 02:56 
+
+============================== ERROR LOG START ================================
+At Request: 500 /api/v2/create POST 10.2.0.7
+ERROR Message : READONLY You can't write against a read only slave.
+
+
+
+================================ ERROR LOG END ================================
+
+[ERRO] 2020/06/09 02:56 [RDB Transaction] RequestID: , RDB_TX Rollback()2020/06/09 02:59 
+
+
+
+
+
+2020/06/09 02:59 ===== ****************************** =====
+2020/06/09 02:59 ===== ****************************** =====
+2020/06/09 02:59 ===== START : Media Control Service  =====
+2020/06/09 02:59 ===== **********(with iris)********* =====
+2020/06/09 02:59 ===== ****************************** =====
+
+2020/06/09 02:59 IRIS Version : 11.1.1
+2020/06/09 02:59 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:47)[0m
+[33m[2020-06-09 02:59:28][0m [36;1m[0.93ms][0m SELECT * FROM b2b_auth a  WHERE (a.key = 'coshop') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/09 02:59 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:57)[0m
+[33m[2020-06-09 02:59:28][0m [36;1m[0.72ms][0m INSERT INTO `b2b_live` (`live_seq`,`service_seq`,`room_name`,`access_point`,`videoroom`,`textroom`,`record`,`description`,`status`,`created_at`,`updated_at`,`callback`) VALUES ('10912bf7-0296-e485-f04c-fba1424dd85d',1,'swmoon12345678','wss://dev-edge.cojam.shop:18002','6767357556628434','6767357556628434',true,'testtesetest','1000','2020-06-09 02:59:28','2020-06-09 02:59:28','http://was.cojam.shop/cb/repo.do') 
+[36;31m[1 rows affected or returned ][0m 
+[ERRO] 2020/06/09 02:59 
+
+============================== ERROR LOG START ================================
+At Request: 500 /api/v2/create POST 10.2.0.7
+ERROR Message : READONLY You can't write against a read only slave.
+
+
+
+================================ ERROR LOG END ================================
+
+
+[ERRO] 2020/06/09 02:59 [RDB Transaction] RequestID: , RDB_TX Rollback()

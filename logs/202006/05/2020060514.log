@@ -1,0 +1,127 @@
+2020/06/05 05:26 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-06-05 05:26:49][0m [36;1m[1.20ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = 'c1228788-6b7d-a14a-2dbf-f3ddddb0aaed') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/05 05:32 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:47)[0m
+[33m[2020-06-05 05:32:01][0m [36;1m[0.64ms][0m SELECT * FROM b2b_auth a  WHERE (a.key = 'coshop') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/05 05:32 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:57)[0m
+[33m[2020-06-05 05:32:01][0m [36;1m[0.61ms][0m INSERT INTO `b2b_live` (`live_seq`,`service_seq`,`room_name`,`access_point`,`videoroom`,`textroom`,`record`,`description`,`status`,`created_at`,`updated_at`,`callback`) VALUES ('3cc4bc73-c4dd-7aba-00a2-64d7ceb34c80',1,'Title','wss://dev-edge.cojam.shop:18001','227030179128178','227030179128178',true,'desc','1000','2020-06-05 05:32:01','2020-06-05 05:32:01','https://dev-api.cojam.shop/media') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/05 05:33 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-06-05 05:33:05][0m [36;1m[1.00ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '3cc4bc73-c4dd-7aba-00a2-64d7ceb34c80') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/05 05:33 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:95)[0m
+[33m[2020-06-05 05:33:05][0m [36;1m[0.66ms][0m SELECT * FROM `b2b_live`  WHERE (live_seq = '3cc4bc73-c4dd-7aba-00a2-64d7ceb34c80') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/05 05:33 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:97)[0m
+[33m[2020-06-05 05:33:05][0m [36;1m[0.64ms][0m UPDATE `b2b_live` SET `status` = '9000', `updated_at` = '2020-06-05 05:33:05'  WHERE (live_seq = '3cc4bc73-c4dd-7aba-00a2-64d7ceb34c80') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/05 05:33 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:47)[0m
+[33m[2020-06-05 05:33:15][0m [36;1m[0.67ms][0m SELECT * FROM b2b_auth a  WHERE (a.key = 'coshop') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/05 05:33 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:57)[0m
+[33m[2020-06-05 05:33:15][0m [36;1m[0.70ms][0m INSERT INTO `b2b_live` (`live_seq`,`service_seq`,`room_name`,`access_point`,`videoroom`,`textroom`,`record`,`description`,`status`,`created_at`,`updated_at`,`callback`) VALUES ('22309a8d-44f4-9f57-1462-0254014686bb',1,'Title','wss://dev-edge.cojam.shop:18001','5566264168914070','5566264168914070',true,'desc','1000','2020-06-05 05:33:15','2020-06-05 05:33:15','https://dev-api.cojam.shop/media') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/05 05:33 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-06-05 05:33:34][0m [36;1m[1.11ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '22309a8d-44f4-9f57-1462-0254014686bb') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/05 05:33 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:95)[0m
+[33m[2020-06-05 05:33:34][0m [36;1m[0.90ms][0m SELECT * FROM `b2b_live`  WHERE (live_seq = '22309a8d-44f4-9f57-1462-0254014686bb') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/05 05:33 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:97)[0m
+[33m[2020-06-05 05:33:34][0m [36;1m[0.68ms][0m UPDATE `b2b_live` SET `status` = '9000', `updated_at` = '2020-06-05 05:33:34'  WHERE (live_seq = '22309a8d-44f4-9f57-1462-0254014686bb') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/05 05:39 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:47)[0m
+[33m[2020-06-05 05:39:47][0m [36;1m[0.57ms][0m SELECT * FROM b2b_auth a  WHERE (a.key = 'coshop') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/05 05:39 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:57)[0m
+[33m[2020-06-05 05:39:47][0m [36;1m[0.65ms][0m INSERT INTO `b2b_live` (`live_seq`,`service_seq`,`room_name`,`access_point`,`videoroom`,`textroom`,`record`,`description`,`status`,`created_at`,`updated_at`,`callback`) VALUES ('3550e16d-55e6-1113-35a1-83ad72958556',1,'Title','wss://dev-edge.cojam.shop:18001','7788719138334199','7788719138334199',true,'desc','1000','2020-06-05 05:39:47','2020-06-05 05:39:47','https://dev-api.cojam.shop/media') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/05 05:41 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-06-05 05:41:06][0m [36;1m[0.88ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '3550e16d-55e6-1113-35a1-83ad72958556') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/05 05:41 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-06-05 05:41:09][0m [36;1m[0.74ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '3550e16d-55e6-1113-35a1-83ad72958556') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/05 05:41 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-06-05 05:41:58][0m [36;1m[0.68ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '3550e16d-55e6-1113-35a1-83ad72958556') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/05 05:41 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:95)[0m
+[33m[2020-06-05 05:41:58][0m [36;1m[0.83ms][0m SELECT * FROM `b2b_live`  WHERE (live_seq = '3550e16d-55e6-1113-35a1-83ad72958556') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/05 05:41 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:97)[0m
+[33m[2020-06-05 05:41:58][0m [36;1m[0.59ms][0m UPDATE `b2b_live` SET `status` = '9000', `updated_at` = '2020-06-05 05:41:58'  WHERE (live_seq = '3550e16d-55e6-1113-35a1-83ad72958556') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/05 05:42 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:47)[0m
+[33m[2020-06-05 05:42:56][0m [36;1m[1.35ms][0m SELECT * FROM b2b_auth a  WHERE (a.key = 'coshop') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/05 05:42 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:57)[0m
+[33m[2020-06-05 05:42:56][0m [36;1m[1.16ms][0m INSERT INTO `b2b_live` (`live_seq`,`service_seq`,`room_name`,`access_point`,`videoroom`,`textroom`,`record`,`description`,`status`,`created_at`,`updated_at`,`callback`) VALUES ('56eb513f-7805-0525-8d78-fb513ea171a7',1,'Title','wss://dev-edge.cojam.shop:18001','7222777219151505','7222777219151505',true,'desc','1000','2020-06-05 05:42:56','2020-06-05 05:42:56','https://dev-api.cojam.shop/media') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/05 05:43 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-06-05 05:43:21][0m [36;1m[0.77ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '56eb513f-7805-0525-8d78-fb513ea171a7') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/05 05:43 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:95)[0m
+[33m[2020-06-05 05:43:21][0m [36;1m[0.84ms][0m SELECT * FROM `b2b_live`  WHERE (live_seq = '56eb513f-7805-0525-8d78-fb513ea171a7') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/05 05:43 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:97)[0m
+[33m[2020-06-05 05:43:21][0m [36;1m[0.63ms][0m UPDATE `b2b_live` SET `status` = '9000', `updated_at` = '2020-06-05 05:43:21'  WHERE (live_seq = '56eb513f-7805-0525-8d78-fb513ea171a7') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/05 05:43 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-06-05 05:43:24][0m [36;1m[1.05ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '56eb513f-7805-0525-8d78-fb513ea171a7') 
+[36;31m[1 rows affected or returned ][0m 
+[ERRO] 2020/06/05 05:43 [RDB Transaction] RequestID: , RDB_TX Rollback()
+2020/06/05 05:43 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:47)[0m
+[33m[2020-06-05 05:43:57][0m [36;1m[0.66ms][0m SELECT * FROM b2b_auth a  WHERE (a.key = 'coshop') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/05 05:43 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:57)[0m
+[33m[2020-06-05 05:43:57][0m [36;1m[1.56ms][0m INSERT INTO `b2b_live` (`live_seq`,`service_seq`,`room_name`,`access_point`,`videoroom`,`textroom`,`record`,`description`,`status`,`created_at`,`updated_at`,`callback`) VALUES ('32fe6534-5dcf-a30e-1758-d20fffe159a5',1,'Title','wss://dev-edge.cojam.shop:18001','104744610299533','104744610299533',true,'desc','1000','2020-06-05 05:43:57','2020-06-05 05:43:57','https://dev-api.cojam.shop/media') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/05 05:44 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-06-05 05:44:07][0m [36;1m[0.87ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '32fe6534-5dcf-a30e-1758-d20fffe159a5') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/05 05:44 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:95)[0m
+[33m[2020-06-05 05:44:07][0m [36;1m[0.82ms][0m SELECT * FROM `b2b_live`  WHERE (live_seq = '32fe6534-5dcf-a30e-1758-d20fffe159a5') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/05 05:44 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:97)[0m
+[33m[2020-06-05 05:44:07][0m [36;1m[0.63ms][0m UPDATE `b2b_live` SET `status` = '9000', `updated_at` = '2020-06-05 05:44:07'  WHERE (live_seq = '32fe6534-5dcf-a30e-1758-d20fffe159a5') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/05 05:44 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:47)[0m
+[33m[2020-06-05 05:44:25][0m [36;1m[0.98ms][0m SELECT * FROM b2b_auth a  WHERE (a.key = 'coshop') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/05 05:44 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:57)[0m
+[33m[2020-06-05 05:44:25][0m [36;1m[0.79ms][0m INSERT INTO `b2b_live` (`live_seq`,`service_seq`,`room_name`,`access_point`,`videoroom`,`textroom`,`record`,`description`,`status`,`created_at`,`updated_at`,`callback`) VALUES ('ec40b3a7-4d96-b0d4-6d10-75543594edd0',1,'Title','wss://dev-edge.cojam.shop:18002','2283161841092244','2283161841092244',true,'desc','1000','2020-06-05 05:44:25','2020-06-05 05:44:25','https://dev-api.cojam.shop/media') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/05 05:44 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-06-05 05:44:43][0m [36;1m[0.99ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = 'ec40b3a7-4d96-b0d4-6d10-75543594edd0') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/05 05:44 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-06-05 05:44:48][0m [36;1m[0.74ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = 'ec40b3a7-4d96-b0d4-6d10-75543594edd0') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/05 05:44 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-06-05 05:44:57][0m [36;1m[0.69ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = 'ec40b3a7-4d96-b0d4-6d10-75543594edd0') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/05 05:44 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:95)[0m
+[33m[2020-06-05 05:44:57][0m [36;1m[0.85ms][0m SELECT * FROM `b2b_live`  WHERE (live_seq = 'ec40b3a7-4d96-b0d4-6d10-75543594edd0') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/05 05:44 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:97)[0m
+[33m[2020-06-05 05:44:57][0m [36;1m[0.70ms][0m UPDATE `b2b_live` SET `status` = '9000', `updated_at` = '2020-06-05 05:44:57'  WHERE (live_seq = 'ec40b3a7-4d96-b0d4-6d10-75543594edd0') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/05 05:46 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:47)[0m
+[33m[2020-06-05 05:46:30][0m [36;1m[0.60ms][0m SELECT * FROM b2b_auth a  WHERE (a.key = 'coshop') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/05 05:46 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:57)[0m
+[33m[2020-06-05 05:46:30][0m [36;1m[1.11ms][0m INSERT INTO `b2b_live` (`live_seq`,`service_seq`,`room_name`,`access_point`,`videoroom`,`textroom`,`record`,`description`,`status`,`created_at`,`updated_at`,`callback`) VALUES ('8885742e-2be6-d42e-a4bd-fbefeb646402',1,'Title','wss://dev-edge.cojam.shop:18002','7667574433947592','7667574433947592',true,'desc','1000','2020-06-05 05:46:30','2020-06-05 05:46:30','https://dev-api.cojam.shop/media') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/05 05:46 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-06-05 05:46:45][0m [36;1m[0.91ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '8885742e-2be6-d42e-a4bd-fbefeb646402') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/05 05:46 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-06-05 05:46:57][0m [36;1m[0.66ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '8885742e-2be6-d42e-a4bd-fbefeb646402') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/05 05:46 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:95)[0m
+[33m[2020-06-05 05:46:57][0m [36;1m[0.72ms][0m SELECT * FROM `b2b_live`  WHERE (live_seq = '8885742e-2be6-d42e-a4bd-fbefeb646402') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/05 05:46 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:97)[0m
+[33m[2020-06-05 05:46:57][0m [36;1m[0.61ms][0m UPDATE `b2b_live` SET `status` = '9000', `updated_at` = '2020-06-05 05:46:57'  WHERE (live_seq = '8885742e-2be6-d42e-a4bd-fbefeb646402') 
+[36;31m[1 rows affected or returned ][0m 

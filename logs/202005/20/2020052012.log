@@ -1,0 +1,126 @@
+2020/05/20 03:28 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-20 03:28:14][0m [36;1m[0.71ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = 'f3840292-e689-8360-9978-0ef2ae6914de') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/20 03:33 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-20 03:33:50][0m [36;1m[0.78ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '302f6bca-fd0c-0ef5-93c8-ae5a6e15a791') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/20 03:34 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:47)[0m
+[33m[2020-05-20 03:34:42][0m [36;1m[0.60ms][0m SELECT * FROM b2b_auth a  WHERE (a.key = 'coshop') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/20 03:34 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:57)[0m
+[33m[2020-05-20 03:34:42][0m [36;1m[0.58ms][0m INSERT INTO `b2b_live` (`live_seq`,`service_seq`,`room_name`,`access_point`,`videoroom`,`textroom`,`record`,`description`,`status`,`created_at`,`updated_at`,`callback`) VALUES ('d0cd363b-c652-4f16-564b-f5e3641e1b14',1,'Title','wss://edge.cojam.shop:18001','1939632872604632','1939632872604632',true,'desc','1000','2020-05-20 03:34:42','2020-05-20 03:34:42','http://52.231.204.44:3000/media') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/20 03:35 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-20 03:35:28][0m [36;1m[0.67ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = 'd0cd363b-c652-4f16-564b-f5e3641e1b14') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/20 03:35 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:95)[0m
+[33m[2020-05-20 03:35:28][0m [36;1m[0.64ms][0m SELECT * FROM `b2b_live`  WHERE (live_seq = 'd0cd363b-c652-4f16-564b-f5e3641e1b14') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/20 03:35 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:97)[0m
+[33m[2020-05-20 03:35:28][0m [36;1m[0.51ms][0m UPDATE `b2b_live` SET `status` = '9000', `updated_at` = '2020-05-20 03:35:28'  WHERE (live_seq = 'd0cd363b-c652-4f16-564b-f5e3641e1b14') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/20 03:35 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-20 03:35:30][0m [36;1m[0.82ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = 'd0cd363b-c652-4f16-564b-f5e3641e1b14') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/20 03:38 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-20 03:38:43][0m [36;1m[0.75ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '302f6bca-fd0c-0ef5-93c8-ae5a6e15a791') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/20 03:47 
+
+
+
+
+
+2020/05/20 03:47 ===== ****************************** =====
+2020/05/20 03:47 ===== ****************************** =====
+2020/05/20 03:47 ===== START : Media Control Service  =====
+2020/05/20 03:47 ===== **********(with iris)********* =====
+2020/05/20 03:47 ===== ****************************** =====
+
+2020/05/20 03:47 IRIS Version : 11.1.1
+2020/05/20 03:47 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-20 03:47:41][0m [36;1m[3.51ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '302f6bca-fd0c-0ef5-93c8-ae5a6e15a791') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/20 03:47 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-20 03:47:57][0m [36;1m[0.73ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '302f6bca-fd0c-0ef5-93c8-ae5a6e15a791') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/20 03:48 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-20 03:48:11][0m [36;1m[0.68ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '302f6bca-fd0c-0ef5-93c8-ae5a6e15a791') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/20 03:48 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:47)[0m
+[33m[2020-05-20 03:48:26][0m [36;1m[1.08ms][0m SELECT * FROM b2b_auth a  WHERE (a.key = 'coshop') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/20 03:48 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:57)[0m
+[33m[2020-05-20 03:48:26][0m [36;1m[1.87ms][0m INSERT INTO `b2b_live` (`live_seq`,`service_seq`,`room_name`,`access_point`,`videoroom`,`textroom`,`record`,`description`,`status`,`created_at`,`updated_at`,`callback`) VALUES ('d2c46725-442e-0dcb-41ee-751dbc875631',1,'Title','wss://edge.cojam.shop:18001','8088119760579268','8088119760579268',true,'desc','1000','2020-05-20 03:48:26','2020-05-20 03:48:26','http://52.231.204.44:3000/media') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/20 03:48 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-20 03:48:45][0m [36;1m[0.75ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = 'd2c46725-442e-0dcb-41ee-751dbc875631') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/20 03:48 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:95)[0m
+[33m[2020-05-20 03:48:45][0m [36;1m[0.67ms][0m SELECT * FROM `b2b_live`  WHERE (live_seq = 'd2c46725-442e-0dcb-41ee-751dbc875631') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/20 03:48 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:97)[0m
+[33m[2020-05-20 03:48:45][0m [36;1m[0.60ms][0m UPDATE `b2b_live` SET `status` = '9000', `updated_at` = '2020-05-20 03:48:45'  WHERE (live_seq = 'd2c46725-442e-0dcb-41ee-751dbc875631') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/20 03:50 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:47)[0m
+[33m[2020-05-20 03:50:13][0m [36;1m[0.55ms][0m SELECT * FROM b2b_auth a  WHERE (a.key = 'coshop') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/20 03:50 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:57)[0m
+[33m[2020-05-20 03:50:13][0m [36;1m[0.52ms][0m INSERT INTO `b2b_live` (`live_seq`,`service_seq`,`room_name`,`access_point`,`videoroom`,`textroom`,`record`,`description`,`status`,`created_at`,`updated_at`,`callback`) VALUES ('3ac95053-19dd-4dc8-c6b6-4f25e4026b91',1,'Title','wss://edge.cojam.shop:18001','7343485563403646','7343485563403646',true,'desc','1000','2020-05-20 03:50:13','2020-05-20 03:50:13','http://52.231.204.44:3000/media') 
+[36;31m[1 rows affected or returned ][0m 
+2020/05/20 03:50 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-20 03:50:32][0m [36;1m[0.80ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '3ac95053-19dd-4dc8-c6b6-4f25e4026b91') 
+[36;31m[1 rows affected or returned ][0m 
+[ERRO] 2020/05/20 03:50 
+
+============================== ERROR LOG START ================================
+At Request: 500 /api/v2/recreate POST 52.231.204.44
+ERROR Message : runtime error: invalid memory address or nil pointer dereference
+
+
+
+================================ ERROR LOG END ================================
+
+
+[ERRO] 2020/05/20 03:50 [RDB Transaction] RequestID: , RDB_TX Rollback()
+2020/05/20 03:51 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-20 03:51:01][0m [36;1m[0.61ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '3ac95053-19dd-4dc8-c6b6-4f25e4026b91') 
+[36;31m[1 rows affected or returned ][0m 
+[ERRO] 2020/05/20 03:51 
+
+============================== ERROR LOG START ================================
+At Request: 500 /api/v2/recreate POST 52.231.204.44
+ERROR Message : runtime error: invalid memory address or nil pointer dereference
+
+
+
+================================ ERROR LOG END ================================
+
+
+[ERRO] 2020/05/20 03:51 [RDB Transaction] RequestID: , RDB_TX Rollback()
+2020/05/20 03:52 
+
+
+
+
+
+2020/05/20 03:52 ===== ****************************** =====
+2020/05/20 03:52 ===== ****************************** =====
+2020/05/20 03:52 ===== START : Media Control Service  =====
+2020/05/20 03:52 ===== **********(with iris)********* =====
+2020/05/20 03:52 ===== ****************************** =====
+
+2020/05/20 03:52 IRIS Version : 11.1.1
+2020/05/20 03:53 
+
+
+
+
+
+2020/05/20 03:53 ===== ****************************** =====
+2020/05/20 03:53 ===== ****************************** =====
+2020/05/20 03:53 ===== START : Media Control Service  =====
+2020/05/20 03:53 ===== **********(with iris)********* =====
+2020/05/20 03:53 ===== ****************************** =====
+
+2020/05/20 03:53 IRIS Version : 11.1.1

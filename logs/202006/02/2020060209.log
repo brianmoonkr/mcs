@@ -1,0 +1,27 @@
+2020/06/02 00:03 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-06-02 00:03:29][0m [36;1m[0.83ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = 'dd54c4f8-6861-0497-e346-2ee6b1a7a952') 
+[36;31m[1 rows affected or returned ][0m 2020/06/02 00:04 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-06-02 00:04:24][0m [36;1m[0.77ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = 'dd54c4f8-6861-0497-e346-2ee6b1a7a952') 
+[36;31m[1 rows affected or returned ][0m 2020/06/02 00:04 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:95)[0m
+[33m[2020-06-02 00:04:24][0m [36;1m[0.81ms][0m SELECT * FROM `b2b_live`  WHERE (live_seq = 'dd54c4f8-6861-0497-e346-2ee6b1a7a952') 
+[36;31m[1 rows affected or returned ][0m 2020/06/02 00:04 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:97)[0m
+[33m[2020-06-02 00:04:24][0m [36;1m[0.62ms][0m UPDATE `b2b_live` SET `status` = '9000', `updated_at` = '2020-06-02 00:04:24'  WHERE (live_seq = 'dd54c4f8-6861-0497-e346-2ee6b1a7a952') 
+[36;31m[1 rows affected or returned ][0m 2020/06/02 00:10 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-06-02 00:10:46][0m [36;1m[0.92ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '12e0cd21-dacd-7835-d4c7-56d4579c2946') 
+[36;31m[1 rows affected or returned ][0m 2020/06/02 00:26 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-06-02 00:26:40][0m [36;1m[1.51ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = 'dd54c4f8-6861-0497-e346-2ee6b1a7a952') 
+[36;31m[1 rows affected or returned ][0m 2020/06/02 00:26 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-06-02 00:26:46][0m [36;1m[0.79ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '12e0cd21-dacd-7835-d4c7-56d4579c2946') 
+[36;31m[1 rows affected or returned ][0m 2020/06/02 00:59 
+
+
+
+
+
+2020/06/02 00:59 ===== ****************************** =====
+2020/06/02 00:59 ===== ****************************** =====
+2020/06/02 00:59 ===== START : Media Control Service  =====
+2020/06/02 00:59 ===== **********(with iris)********* =====
+2020/06/02 00:59 ===== ****************************** =====
+
+2020/06/02 00:59 IRIS Version : 11.1.1

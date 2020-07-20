@@ -1,0 +1,32 @@
+2020/06/09 05:55 
+
+
+
+
+
+2020/06/09 05:55 ===== ****************************** =====
+2020/06/09 05:55 ===== ****************************** =====
+2020/06/09 05:55 ===== START : Media Control Service  =====
+2020/06/09 05:55 ===== **********(with iris)********* =====
+2020/06/09 05:55 ===== ****************************** =====
+
+2020/06/09 05:55 IRIS Version : 11.1.1
+2020/06/09 05:56 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:47)[0m
+[33m[2020-06-09 05:56:52][0m [36;1m[0.84ms][0m SELECT * FROM b2b_auth a  WHERE (a.key = 'coshop') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/09 05:56 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:57)[0m
+[33m[2020-06-09 05:56:52][0m [36;1m[0.77ms][0m INSERT INTO `b2b_live` (`live_seq`,`service_seq`,`room_name`,`access_point`,`videoroom`,`textroom`,`record`,`description`,`status`,`created_at`,`updated_at`,`callback`) VALUES ('363e8a8b-b065-5327-a244-fcda7152b7aa',1,'Title','wss://dev-edge.cojam.shop:18001','7517615361202146','7517615361202146',true,'desc','1000','2020-06-09 05:56:52','2020-06-09 05:56:52','https://dev-api.cojam.shop/media') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/09 05:57 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-06-09 05:57:26][0m [36;1m[0.97ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '363e8a8b-b065-5327-a244-fcda7152b7aa') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/09 05:57 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:95)[0m
+[33m[2020-06-09 05:57:26][0m [36;1m[0.75ms][0m SELECT * FROM `b2b_live`  WHERE (live_seq = '363e8a8b-b065-5327-a244-fcda7152b7aa') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/09 05:57 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:97)[0m
+[33m[2020-06-09 05:57:26][0m [36;1m[0.82ms][0m UPDATE `b2b_live` SET `status` = '9000', `updated_at` = '2020-06-09 05:57:26'  WHERE (live_seq = '363e8a8b-b065-5327-a244-fcda7152b7aa') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/09 05:57 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-06-09 05:57:31][0m [36;1m[0.77ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '363e8a8b-b065-5327-a244-fcda7152b7aa') 
+[36;31m[1 rows affected or returned ][0m 
+[ERRO] 2020/06/09 05:57 [RDB Transaction] RequestID: , RDB_TX Rollback()

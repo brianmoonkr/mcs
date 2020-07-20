@@ -1,0 +1,20 @@
+2020/06/02 10:00 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:47)[0m
+[33m[2020-06-02 10:00:51][0m [36;1m[0.71ms][0m SELECT * FROM b2b_auth a  WHERE (a.key = 'coshop') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/02 10:00 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:57)[0m
+[33m[2020-06-02 10:00:51][0m [36;1m[0.75ms][0m INSERT INTO `b2b_live` (`live_seq`,`service_seq`,`room_name`,`access_point`,`videoroom`,`textroom`,`record`,`description`,`status`,`created_at`,`updated_at`,`callback`) VALUES ('508261e7-913b-2dfe-bbd4-3b409bab4dc0',1,'Title','wss://dev-edge.cojam.shop:18001','6833919802928205','6833919802928205',true,'desc','1000','2020-06-02 10:00:51','2020-06-02 10:00:51','https://dev-api.cojam.shop/media') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/02 10:01 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-06-02 10:01:23][0m [36;1m[1.00ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '508261e7-913b-2dfe-bbd4-3b409bab4dc0') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/02 10:01 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:95)[0m
+[33m[2020-06-02 10:01:23][0m [36;1m[0.96ms][0m SELECT * FROM `b2b_live`  WHERE (live_seq = '508261e7-913b-2dfe-bbd4-3b409bab4dc0') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/02 10:01 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:97)[0m
+[33m[2020-06-02 10:01:23][0m [36;1m[0.76ms][0m UPDATE `b2b_live` SET `status` = '9000', `updated_at` = '2020-06-02 10:01:23'  WHERE (live_seq = '508261e7-913b-2dfe-bbd4-3b409bab4dc0') 
+[36;31m[1 rows affected or returned ][0m 
+2020/06/02 10:15 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:47)[0m
+[33m[2020-06-02 10:15:49][0m [36;1m[1.21ms][0m SELECT * FROM b2b_auth a  WHERE (a.key = 'coshop') 
+[36;31m[1 rows affected or returned ][0m 2020/06/02 10:15 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:57)[0m
+[33m[2020-06-02 10:15:49][0m [36;1m[0.75ms][0m INSERT INTO `b2b_live` (`live_seq`,`service_seq`,`room_name`,`access_point`,`videoroom`,`textroom`,`record`,`description`,`status`,`created_at`,`updated_at`,`callback`) VALUES ('cbd2b6e6-31b5-036a-910c-53ebd63e3e22',1,'Title','wss://dev-edge.cojam.shop:18001','7179245920015486','7179245920015486',true,'desc','1000','2020-06-02 10:15:49','2020-06-02 10:15:49','https://dev-api.cojam.shop/media') 
+[36;31m[1 rows affected or returned ][0m 

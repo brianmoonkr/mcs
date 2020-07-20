@@ -1,0 +1,20 @@
+version: '3'
+services:
+  redis:
+    image:  "redis:4.0.11"
+    ports:
+      - 6379:6379
+    restart: always
+    volumes:
+      - /home/teamgrit/volumes/redis:/data
+  mcs:
+    image: "cojam/mcs-dev:0.1.1.2-ubuntu-18.04"
+    ports:
+      - 9100:9100
+      - 7088:7088
+    restart: always
+    volumes:
+      - /home/teamgrit/storage:/storage
+      - /home/teamgrit/media:/media
+    environment:
+      - COJAM_EXECMODE=dev

@@ -1,0 +1,17 @@
+2020/05/26 00:34 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-26 00:34:39][0m [36;1m[1.99ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '59e5638e-3bb1-a54d-c501-c96f80876c2d') 
+[36;31m[1 rows affected or returned ][0m 2020/05/26 00:35 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-26 00:35:31][0m [36;1m[0.82ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '59e5638e-3bb1-a54d-c501-c96f80876c2d') 
+[36;31m[1 rows affected or returned ][0m 2020/05/26 00:35 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-26 00:35:32][0m [36;1m[0.82ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '59e5638e-3bb1-a54d-c501-c96f80876c2d') 
+[36;31m[1 rows affected or returned ][0m 2020/05/26 00:35 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-26 00:35:33][0m [36;1m[0.75ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '59e5638e-3bb1-a54d-c501-c96f80876c2d') 
+[36;31m[1 rows affected or returned ][0m 2020/05/26 00:36 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-26 00:36:26][0m [36;1m[0.73ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '59e5638e-3bb1-a54d-c501-c96f80876c2d') 
+[36;31m[1 rows affected or returned ][0m 2020/05/26 00:36 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-26 00:36:28][0m [36;1m[0.83ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '59e5638e-3bb1-a54d-c501-c96f80876c2d') 
+[36;31m[1 rows affected or returned ][0m 2020/05/26 00:49 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-26 00:49:04][0m [36;1m[0.73ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '59e5638e-3bb1-a54d-c501-c96f80876c2d') 
+[36;31m[1 rows affected or returned ][0m 2020/05/26 00:49 [35m(/home/teamgrit/Projects/mcs/mvc/dao/janus_dao.go:65)[0m
+[33m[2020-05-26 00:49:04][0m [36;1m[0.73ms][0m SELECT * FROM b2b_live a  WHERE (a.live_seq = '59e5638e-3bb1-a54d-c501-c96f80876c2d') 
+[36;31m[1 rows affected or returned ][0m 
